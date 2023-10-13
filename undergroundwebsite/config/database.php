@@ -46,11 +46,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_HOST', '127.0.0.1'),      // usually localhost, or sql server database ip address
+            'port' => env('DB_PORT', '3306'),           //default port 1433, or mention port in which it run on your server if it different
+            'database' => env('DB_DATABASE', 'forge'),  // mention your sql server database name here
+            'username' => env('DB_USERNAME', 'forge'),  //mssql database username
+            'password' => env('DB_PASSWORD', ''),       //mssql database password
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

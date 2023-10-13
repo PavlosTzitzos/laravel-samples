@@ -1,0 +1,78 @@
+.page-container h2, #temp_shows h4 {
+	text-align: center;
+	color: white;
+	margin-top: 50px;
+}
+
+.page-container h2{
+	font-weight: bold;
+}
+
+#scheduler h4 {
+	text-align: center;
+	color: white;
+	margin-top: 20px;
+}
+
+form {
+	margin: 0 10px;
+}
+
+table {
+	border: transparent;
+	background-image: url("../img/shows-bgrnd.jpg");
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+}
+
+table tr:last-child td:first-child{
+	border-bottom-left-radius: 15px;
+}
+
+table tr:last-child td:last-child{
+	border-bottom-left-radius: 15px;
+}
+
+table th:last-child {
+	border-top-right-radius: 15px;
+}
+
+table th:first-child {
+	border-top-left-radius: 15px;
+}
+
+table thead tr th, table tbody tr td{
+	text-align: center;
+}
+
+input[type="time"]{
+	border-radius: 5px;
+	height: 38px;
+	border: solid 1px gray;
+}
+
+input[type="text"]{
+	border-radius: 5px;
+	height: 38px;
+	border: solid 1px gray;
+}
+
+input[type="button"]{
+	border-radius: 5px;
+	height: 38px;
+	border: solid 1px grey;
+}
+
+.submitBtnDiv{
+	width: 150px;
+	margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+.submitBtn{
+	border-radius: 5px;
+	height: 38px;
+	width: 150px;
+	margin-bottom: 10px;
+}
