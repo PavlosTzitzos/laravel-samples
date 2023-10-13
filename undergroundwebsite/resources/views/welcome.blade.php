@@ -38,18 +38,18 @@
         <header>
             <div class="nav-container">
                 <div id="logo" class="one">
-                    <img class="logo" src="../img/pcs_logo.png" />
+                    <img class="logo" src="../img/logo.png" />
                 </div>
                 <div id="branding" class="two">
-                    <img class="logo" src="../img/pcs_logo.png" />
+                    <img class="logo" src="../img/banner.png" />
                 </div>
                 <div class="three">
                     <nav>
-                        <ul>
-                            <li class="current"><a href="welcome.blade.php">Αρχική</a></li>
-                            <li><a href="week_schedule.php">Πρόγραμμα</a></li>
-                            <li><a href="services.php">About us</a></li>
-                            <li><a href="services.php">Η Γέφυρα</a></li>
+                        <ul class="menu_open navbar_ul">
+                            <li class="menu_li home_nav current"><a href="#" class="menu_a" onclick="fun1()">Αρχική</a></li>
+                            <li class="menu_li schedule_nev"><a href="#" class="menu_a" onclick="fun2()">Πρόγραμμα</a></li>
+                            <li class="menu_li about_nav"><a href="#" class="menu_a" onclick="fun3()">About us</a></li>
+                            <li class="menu_li gefyra_nav"><a href="#" class="menu_a" onclick="fun4()">Η Γέφυρα</a></li>
                         </ul>
                     </nav>
                 </div>
