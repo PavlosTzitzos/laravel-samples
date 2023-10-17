@@ -25,14 +25,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    /**
-     * Show the program page.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function program()
-    {
-        return view('program');
-    }
 }

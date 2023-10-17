@@ -11,7 +11,7 @@
     <div>
         @if($errors->any())
         <ul>
-            @foreach($erros->all() as $error)
+            @foreach($errors->all() as $error)
                 <li>
                     {{$error}}
                 </li>
@@ -35,11 +35,33 @@
             <input type="file" name="show_logo"/>
         </div>
         <div>
-            Assign producers
+            <label> Producers of this show </label>
+            <div id="dynamic-form">
+                <!-- Input fields will be added/removed here -->
+            </div>
+            <button type="button" id="add-producer">Add Producer</button>
+
         </div>
         <div>
             <input type="submit" value="Save a new show"/>
         </div>
     </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var dynamicForm = $('#dynamic-form');
+            var addButton = $('#add-producer');
+
+            addButton.click(function() {
+                dynamicForm.append('<input type="text" name="producers[]"><button type="button" class="remove-producer">Remove Producer</button><br>');
+            });
+
+            dynamicForm.on('click', '.remove-producer', function() {
+                $(this).prev('input').remove();
+                $(this).remove();
+            });
+        });
+    </script>
+
 </body>
 </html>

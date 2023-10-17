@@ -35,33 +35,45 @@ Route::get('/producer', [ProducerController::class,'index'])->name('producer.ind
 
 Auth::routes();
 
-Route::get('/home', 'ProgramsController@index')->name('home');
+Route::get('/home', [HomeController::class,'index'])->name('home');
 
 # HTTP GET methods
 
-Route::get('/show/create', [ShowController::class,'create'])->name('show.create');
-Route::get('/show/{show}/edit', [ShowController::class,'edit'])->name('show.edit');
-Route::get('/show/{show}/delete', [ShowController::class,'delete'])->name('show.delete');
+Route::get('/home/program', [ProgramController::class,'index'])->name('program.index')->middleware('auth');
+Route::get('/home/show', [ShowController::class,'index'])->name('show.index')->middleware('auth');
+Route::get('/home/producer', [ProducerController::class,'index'])->name('producer.index')->middleware('auth');
 
-Route::get('/program/create', [ProgramController::class,'create'])->name('program.create');
-Route::get('/program/{program}/edit', [ProgramController::class,'edit'])->name('program.edit');
-Route::get('/program/{program}/delete', [ProgramController::class,'delete'])->name('program.delete');
 
-Route::get('/producer/create', [ProducerController::class,'create'])->name('producer.create');
-Route::get('/producer/{producer}/edit', [ProducerController::class,'edit'])->name('producer.edit');
-Route::get('/producer/{producer}/delete', [ProducerController::class,'delete'])->name('producer.delete');
+Route::get('/home/show/create', [ShowController::class,'create'])->name('show.create')->middleware('auth');
+Route::get('/home/show/{show}/edit', [ShowController::class,'edit'])->name('show.edit')->middleware('auth');
+Route::get('/home/show/{show}/delete', [ShowController::class,'delete'])->name('show.delete')->middleware('auth');
+
+Route::get('/home/program/create', [ProgramController::class,'create'])->name('program.create')->middleware('auth');
+Route::get('/home/program/{program}/edit', [ProgramController::class,'edit'])->name('program.edit')->middleware('auth');
+Route::get('/home/program/{program}/delete', [ProgramController::class,'delete'])->name('program.delete')->middleware('auth');
+
+Route::get('/home/producer/create', [ProducerController::class,'create'])->name('producer.create')->middleware('auth');
+Route::get('/home/producer/{producer}/edit', [ProducerController::class,'edit'])->name('producer.edit')->middleware('auth');
+Route::get('/home/producer/{producer}/delete', [ProducerController::class,'delete'])->name('producer.delete')->middleware('auth');
 
 # HTTP POST methods :
 
-Route::post('/show', [ShowController::class,'store'])->name('show.store');
-Route::post('/program', [ProgramController::class,'store'])->name('program.store');
-Route::post('/producer', [ProducerController::class,'store'])->name('producer.store');
+Route::post('/home/show', [ShowController::class,'store'])->name('show.store')->middleware('auth');
+Route::post('/home/program', [ProgramController::class,'store'])->name('program.store')->middleware('auth');
+Route::post('/home/producer', [ProducerController::class,'store'])->name('producer.store')->middleware('auth');
 
 # HTTP PUT methods :
 
-Route::put('/show/{show}/update', [ShowController::class,'update'])->name('show.update');
-Route::put('/program/{program}/update', [ProgramController::class,'update'])->name('program.update');
-Route::put('/producer/{producer}/update', [ProducerController::class,'update'])->name('producer.update');
+Route::put('/home/show/{show}/update', [ShowController::class,'update'])->name('show.update')->middleware('auth');
+Route::put('/home/program/{program}/update', [ProgramController::class,'update'])->name('program.update')->middleware('auth');
+Route::put('/home/producer/{producer}/update', [ProducerController::class,'update'])->name('producer.update')->middleware('auth');
 
+# HTTP DELETE methods :
 
+Route::delete('/home/show/{show}/destroy', [ShowController::class,'destroy'])->name('show.destroy')->middleware('auth');
+Route::delete('/home/program/{program}/destroy', [ProgramController::class,'destroy'])->name('program.destroy')->middleware('auth');
+Route::delete('/home/producer/{producer}/destroy', [ProducerController::class,'destroy'])->name('producer.destroy')->middleware('auth');
 
+# HTTP DELETE batch method for program :
+
+Route::delete('/home/program', [ProgramController::class,'clear'])->name('program.clear')->middleware('auth');

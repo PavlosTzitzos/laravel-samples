@@ -25,9 +25,16 @@ class ShowController extends Controller
         return view('show.edit',['show'=>$show]);
     }
 
-    public function delete()
+    public function delete(Show $show)
     {
-        return view('show.delete');
+        return view('show.delete',['show'=>$show]);
+    }
+
+    public function destroy(Show $show)
+    {
+        $show->delete();
+
+        return redirect(route('show.index'))->with('success','Show Deleted Successfully');
     }
     
     public function store(Request $request)
@@ -39,9 +46,13 @@ class ShowController extends Controller
             'show_logo' => 'nullable|image|mimes:jpeg,jpg,png,gif'
         ]);
 
+        $producers = $request->input('producers');
+        
         $show = Show::create($data);
 
-        return redirect(route('show.index'));
+        $show->producers()->attach($producers);
+
+        return redirect(route('show.index'))->with('success','Show Created Successfully');
     }
 
     public function update(Show $show, Request $request)

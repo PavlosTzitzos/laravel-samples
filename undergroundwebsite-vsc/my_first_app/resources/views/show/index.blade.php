@@ -15,28 +15,35 @@
         </div>
         @endif
     </div>
+    @auth
+    <div>
+        <a href="{{route('show.create')}}">Create New Show</a>
+    </div>
+    @endauth
     <div>
         <table border="1">
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Logo</th>
+                @auth
                 <th>Edit</th>
                 <th>Delete</th>
+                @endauth
             </tr>
             @foreach($shows as $show)
             <tr>
-                <th>{{$show->id}}</th>
                 <th>{{$show->show_name}}</th>
                 <th>{{$show->show_description}}</th>
                 <th>{{$show->show_logo}}</th>
+                @auth
                 <th>
                     <a href="{{route('show.edit',['show'=> $show])}}">Edit</a>
                 </th>
                 <th>
                     <a href="{{route('show.delete',['show'=> $show])}}">Delete</a>
                 </th>
+                @endauth
             </tr>
             @endforeach
         </table>

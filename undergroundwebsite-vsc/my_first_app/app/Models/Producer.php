@@ -17,5 +17,12 @@ class Producer extends Model
         'phone_number',
         'email'
     ];
-
+    
+    /**
+     * Relationship Many Shows to Many Producers
+     */
+    public function shows()
+    {
+        return $this->belongsToMany(Show::class,'show_producers', 'producer_id', 'show_id');
+    }
 }

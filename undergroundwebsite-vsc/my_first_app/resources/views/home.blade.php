@@ -15,6 +15,15 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <div>
+                        <a href="{{route('show.index')}}">Shows</a>
+                    </div>
+                    <div>
+                        <a href="{{route('program.index')}}">Program of the week</a>
+                    </div>
+                    <div>
+                        <a href="{{route('producer.index')}}">Producers</a>
+                    </div>
                 </div>
             </div>
         </div>
