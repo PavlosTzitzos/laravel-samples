@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('register');
-});
+Auth::routes();
+
+#Route::get('/home', [App\Http\Controllers\ProfilesController::class, 'index'])->name('home');
+
+Route::get('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
+
