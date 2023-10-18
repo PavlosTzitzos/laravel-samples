@@ -1,35 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Delete a Show</h1>
-    <form method="post" action="{{route('program.destroy',['program'=>$program])}}">
-        @csrf
-        @method('delete')
-        <div>
-            <label> Program Week Day </label>
-            <input type="text" name="program_weekday" value="{{$program->program_weekday}}" disabled>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Delete a Program Slot') }}</div>
+                <form method="post" action="{{route('program.destroy',['program'=>$program])}}">
+                    @csrf
+                    @method('delete')
+                    <div class="form-group row">
+                        <label for="program_weekday" class="col-sm-2 col-form-label">Week Day : </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="program_weekday" id="program_weekday" value="{{$program->program_weekday}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="show_start_time" class="col-sm-2 col-form-label"> Start Time </label>
+                        <div class="col-sm-10">
+                            <input type="time" name="show_start_time" id="show_start_time" class="form-control" value="{{$program->show_start_time}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="show_end_time" class="col-sm-2 col-form-label"> End Time </label>
+                        <div class="col-sm-10">
+                            <input type="time" name="show_end_time" id="show_end_time" class="form-control"  value="{{$program->show_end_time}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="show_id" class="col-sm-2 col-form-label"> Show Id </label>
+                        <div class="col-sm-10">
+                            <input type="number" name="show_id" id="show_id" class="form-control" value="{{$program->show_id}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <div class="p-2"><button id="submit" name="submit" class="btn btn-primary">Confirm Delete</button></div>
+                        <div class="p-2"><a href="{{route('program.index')}}" id="cancel" name="cancel" class="btn btn-danger">Cancel</a></div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div>
-            <label> Start Time </label>
-            <input type="time" name="show_start_time" placeholder="Songs from all underground producer" value="{{$program->show_start_time}}" disabled/>
-        </div>
-        <div>
-            <label> End Time </label>
-            <input type="time" name="show_end_time" value="{{$program->show_end_time}}" disabled/>
-        </div>
-        <div>
-            <label> Show Id </label>
-            <input type="number" name="show_id" value="{{$program->show_id}}" disabled/>
-        </div>
-        <div>
-            <input type="submit" value="Confirm Delete Slot"/>
-        </div>
-    </form>
-</body>
-</html>
+    </div>
+</div>
+@endsection

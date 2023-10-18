@@ -40,18 +40,33 @@ class ShowController extends Controller
     public function store(Request $request)
     {
         //dd($request); # for debugging
+        
+        //Step 1 : validations
         $data = $request->validate([
             'show_name' => 'required',
             'show_description' => 'nullable',
+            //'show_logo' => 'nullable|mimes:jpeg,jpg,png,gif'
             'show_logo' => 'nullable|image|mimes:jpeg,jpg,png,gif'
         ]);
 
+        // Step 2: Save Data like name , time , description
+        $show = Show::create($data);
+        
+        // Step 3: Upload Image and Save Image Name
+        if($request->file('show_logo'))
+        {
+            $file = $request->file('show_logo');
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('public/showlogos'), $filename);
+            $show['show_logo'] = $filename;
+        }
+
+        // Step 4 : Save the relationship
         $producers = $request->input('producers');
         
-        $show = Show::create($data);
-
         $show->producers()->attach($producers);
 
+        // Return
         return redirect(route('show.index'))->with('success','Show Created Successfully');
     }
 
@@ -61,7 +76,7 @@ class ShowController extends Controller
         $data = $request->validate([
             'show_name' => 'required',
             'show_description' => 'nullable',
-            'show_logo' => 'nullable|image|mimes:jpeg,jpg,png,gif'
+            'show_logo' => 'nullable|image|mimes:jpeg,jpg,png,gif,svg|max:2048'
         ]);
 
         $show->update($data);

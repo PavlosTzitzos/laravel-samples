@@ -1,3 +1,53 @@
+# Underground Website
+
+This is the repository of the website of our underground radio. 
+
+Used : 
+
+1. Laravel Framework which is a PHP Framework
+
+2. HTML , CSS , JS 
+
+3. XAMPP , MySQL , phpMyAdmin
+
+# Some important notes :
+
+1. NEVER create tables , rows in phpMyAdmin . Head to database/migrations folder and change the files there !! Check [this](https://www.youtube.com/watch?v=_LA9QsgJ0bw) for more info.
+
+2. [Creating the db from scratch command : php artisan migrate:fresh](https://laravel.com/docs/10.x/migrations#introduction)
+
+3. [Seeding the db can be done with command : php artisan db:seed . The seeding data can be found at database/seeders/DatabaseSeeder.php](https://laravel.com/docs/10.x/seeding#introduction)
+
+4. [Caching and Routing in production](https://laravel.com/docs/10.x/routing#route-caching)
+
+5. For developers looking to use the API of this site note that it is not yet implemented. You will find it in the route/api.php file.
+
+6. If you want to add new pages go to resources\views folder , this is the only place where the View logic of the MVC pattern is located.
+
+7. If you want to change the custom CSS , JS and images go to the public folder NOT in the resources folder !!
+
+8. For those that want to learn more , here is a roadmap :
+
+A. SQL basics / php basics and some OOP knowledge is required / HTML , CSS , JS basics
+
+B. MVC pattern
+
+C. HTTP methods , CRUD methods , RESTfull Service : What are the available methods ? What their purpose ?
+
+D. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin) , Composer (used for php) , Node.JS (used for Vue.JS and npm is needed)
+
+# Sources to get started :
+
+- [VSCode download page - choose the right one for you](https://code.visualstudio.com/download)
+- [VSCode Laravel Extension](https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade)
+- [NodeJS download page - available for all types](https://nodejs.org/en/download)
+- [Chatango - The chat of the site](https://chatango.com/)
+- [How to implement CRUD in Laravel](https://www.youtube.com/watch?v=_LA9QsgJ0bw)
+- [Authentication , image handling , Vue.JS](https://www.youtube.com/watch?v=ImtZ5yENzgE)
+- [Below docs]
+
+# LARAVEL PHP FRAMEWORK
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

@@ -15,7 +15,8 @@ class Producer extends Model
         'second_name',
         'last_name',
         'phone_number',
-        'email'
+        'email',
+        'photo'
     ];
     
     /**

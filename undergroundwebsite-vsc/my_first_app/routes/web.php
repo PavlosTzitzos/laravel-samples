@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\ProducerController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,23 +26,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/program', [ProgramController::class,'index'])->name('program.index');
+Route::get('/gefyra', function () {
+    return view('gefyra');
+});
 
-Route::get('/show', [ShowController::class,'index'])->name('show.index');
+Route::get('/about', function () {
+    return view('about');
+});
 
-Route::get('/producer', [ProducerController::class,'index'])->name('producer.index');
+//Route::get('/program', [ProgramController::class,'index'])->name('program.index');
+//Route::get('/show', [ShowController::class,'index'])->name('show.index');
+//Route::get('/producer', [ProducerController::class,'index'])->name('producer.index');
 
 # Auth routes :
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/home', [HomeController::class,'index'])->name('home')->middleware('auth');
+
+/*
+To disable registration of new users :
+https://devtonight.com/articles/how-to-disable-laravel-user-registration
+*/
+Auth::routes(['register' => false]);
 
 # HTTP GET methods
 
-Route::get('/home/program', [ProgramController::class,'index'])->name('program.index')->middleware('auth');
-Route::get('/home/show', [ShowController::class,'index'])->name('show.index')->middleware('auth');
-Route::get('/home/producer', [ProducerController::class,'index'])->name('producer.index')->middleware('auth');
+Route::get('/home/program', [ProgramController::class,'index'])->name('program.index');
+Route::get('/home/show', [ShowController::class,'index'])->name('show.index');
+Route::get('/home/producer', [ProducerController::class,'index'])->name('producer.index');
 
 
 Route::get('/home/show/create', [ShowController::class,'create'])->name('show.create')->middleware('auth');

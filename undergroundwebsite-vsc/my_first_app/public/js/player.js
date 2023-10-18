@@ -1,12 +1,9 @@
 window.addEventListener("load", () => {
 // (A) AUDIO OBJECT + HTML CONTROLS
-var audio = new Audio("http://83.212.141.202:8000/radio.mp3"), // change to your own!
+var audio = new Audio("http://www.undergroundradio.gr/listen/live.html"), // change to your own!
 
-var audio = new Audio(
-$(function() {
-$('#videoPlayer').player('play', 'http://www.undergroundradio.gr/listen/live.html');
-})
-),
+//var audio = new Audio($(function() { $('#videoPlayer').player('play', 'http://www.undergroundradio.gr/listen/live.html');})),
+
 aPlay = document.getElementById("aPlay"),
 aPlayIco = document.getElementById("aPlayIco"),
 aNow = document.getElementById("aNow"),
@@ -42,10 +39,10 @@ return hh>0 ? `${hh}:${mm}:${ss}` : `${mm}:${ss}` ;
 };
 
 // (C2) TRACK LOADING
-audio.onloadstart = () => {
+//audio.onloadstart = () => {
 //aNow.innerHTML = "Loading";
-aTime.innerHTML = "";
-};
+//aTime.innerHTML = "0";
+//};
 
 // (C3) ON META LOADED
 

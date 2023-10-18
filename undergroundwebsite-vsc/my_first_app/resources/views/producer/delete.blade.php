@@ -1,39 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Delete a Producer</h1>
-    <form method="post" action="{{route('producer.destroy',['producer'=>$producer])}}">
-        @csrf
-        @method('delete')
-        <div>
-            <label> Producer First Name </label>
-            <input type="name" name="first_name" placeholder="Christos" value="{{$producer->first_name}}" disabled/>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Delete Producer') }}</div>
+                <form method="post" action="{{route('producer.destroy',['producer'=>$producer])}}">
+                    @csrf
+                    @method('delete')
+                    <div class="form-group row">
+                        <label for="first_name" class="col-sm-2 col-form-label">First Name </label>
+                        <div class="col-sm-10">
+                            <input type="name" name="first_name" id="first_name" placeholder="e.g. Christos"  value="{{$producer->first_name}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="second_name" class="col-sm-2 col-form-label">Second Name</label>
+                        <div class="col-sm-10">
+                            <input type="name" name="second_name" placeholder="e.g. Giannis (optional)"  value="{{$producer->second_name}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="last_name" class="col-sm-2 col-form-label">Last Name </label>
+                        <div class="col-sm-10">
+                            <input type="name" name="last_name" id="second_name" placeholder="e.g. Papadopoulos" value="{{$producer->last_name}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone_number" class="col-sm-2 col-form-label">Phone Number </label>
+                        <div class="col-sm-10">
+                            <input type="number" name="phone_number" id="phone_number" placeholder="e.g. 6983729286" value="{{$producer->phone_number}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label">Email </label>
+                        <div class="col-sm-10">
+                            <input type="email" name="email" id="email"placeholder="e.g. example@example.com" value="{{$producer->email}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <div class="p-2"><button id="submit" name="submit" class="btn btn-primary">Confirm Delete</button></div>
+                        <div class="p-2"><a href="{{route('producer.index')}}" id="cancel" name="cancel" class="btn btn-danger">Cancel</a></div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div>
-            <label> Producer Second Name (optional) </label>
-            <input type="name" name="second_name" placeholder="Giannis" value="{{$producer->second_name}}" disabled/>
-        </div>
-        <div>
-            <label> Producer Last Name </label>
-            <input type="name" name="last_name" placeholder="Papadopoulos" value="{{$producer->last_name}}" disabled/>
-        </div>
-        <div>
-            <label> Producer Phone Number </label>
-            <input type="number" name="phone_number" placeholder="6983729286" value="{{$producer->phone_number}}" disabled/>
-        </div>
-        <div>
-            <label> Producer Email </label>
-            <input type="email" name="email" placeholder="example@example.com" value="{{$producer->email}}" disabled/>
-        </div>
-        <div>
-            <input type="submit" value="Confirm Delete Producer"/>
-        </div>
-    </form>
-</body>
-</html>
+    </div>
+</div>
+@endsection
