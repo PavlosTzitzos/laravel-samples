@@ -24,31 +24,43 @@
                     <div class="form-group row">
                         <label for="first_name" class="col-sm-2 col-form-label">First Name </label>
                         <div class="col-sm-10">
-                            <input type="name" name="first_name" id="first_name" placeholder="e.g. Christos"/>
+                            <input type="name" class="form-control" name="first_name" id="first_name" placeholder="e.g. Christos"/>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="second_name" class="col-sm-2 col-form-label">Second Name (optional) </label>
                         <div class="col-sm-10">
-                            <input type="name" name="second_name" placeholder="e.g. Giannis"/>
+                            <input type="name" class="form-control" name="second_name" placeholder="e.g. Giannis"/>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="last_name" class="col-sm-2 col-form-label">Last Name </label>
                         <div class="col-sm-10">
-                            <input type="name" name="last_name" id="second_name" placeholder="e.g. Papadopoulos"/>
+                            <input type="name" class="form-control" name="last_name" id="second_name" placeholder="e.g. Papadopoulos"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="description" class="col-sm-2 col-form-label">Description </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="description" id="description" placeholder="e.g. I like DUTH <3 ."/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="image" class="col-sm-2 col-form-label">Description </label>
+                        <div class="col-sm-10">
+                            <input type="file" name="image" id="image" class="form-control-file"/>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="phone_number" class="col-sm-2 col-form-label">Phone Number </label>
                         <div class="col-sm-10">
-                            <input type="number" name="phone_number" id="phone_number" placeholder="e.g. 6983729286"/>
+                            <input type="number" class="form-control" name="phone_number" id="phone_number" placeholder="e.g. 6983729286"/>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-2 col-form-label">Email </label>
                         <div class="col-sm-10">
-                            <input type="email" name="email" id="email"placeholder="e.g. example@example.com"/>
+                            <input type="email" class="form-control" name="email" id="email"placeholder="e.g. example@example.com"/>
                         </div>
                     </div>
                     <div class="d-flex justify-content-around">

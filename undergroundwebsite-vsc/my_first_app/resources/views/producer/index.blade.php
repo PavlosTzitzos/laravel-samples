@@ -20,6 +20,8 @@
                             <th>First Name</th>
                             <th>Second Name</th>
                             <th>Last Name</th>
+                            <th>Description</th>
+                            <th>Photo</th>
                             @auth
                             <th>Phone Number</th>
                             <th>E-mail</th>
@@ -32,6 +34,8 @@
                             <th>{{$producer->first_name}}</th>
                             <th>{{$producer->second_name}}</th>
                             <th>{{$producer->last_name}}</th>
+                            <th>{{$producer->description}}</th>
+                            <th>{{$producer->photo}}</th>
                             @auth
                             <th>{{$producer->phone_number}}</th>
                             <th>{{$producer->email}}</th>

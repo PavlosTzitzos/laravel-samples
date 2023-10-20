@@ -14,6 +14,8 @@ class Producer extends Model
         'first_name',
         'second_name',
         'last_name',
+        'description',
+        'image',
         'phone_number',
         'email',
         'photo'
