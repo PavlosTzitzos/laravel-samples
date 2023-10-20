@@ -16,7 +16,8 @@ class ShowController extends Controller
 
     public function create()
     {
-        return view('show.create');
+        $producers = Show::all();
+        return view('show.create',['available_producers']);
     }
 
     public function edit(Show $show)

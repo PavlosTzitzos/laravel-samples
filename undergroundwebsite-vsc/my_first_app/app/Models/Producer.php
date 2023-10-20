@@ -9,6 +9,9 @@ class Producer extends Model
 {
     use HasFactory;
 
+    /* The table this model is connected to. */
+    protected $table = 'producers';
+
     /* Attributes the user can edit */
     protected $fillable = [
         'first_name',
@@ -26,6 +29,16 @@ class Producer extends Model
      */
     public function shows()
     {
-        return $this->belongsToMany(Show::class,'show_producers', 'producer_id', 'show_id');
+        return $this->belongsToMany(Show::class);
+    }
+
+    /**
+     * Combines first name and last name column
+     * 
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
     }
 }

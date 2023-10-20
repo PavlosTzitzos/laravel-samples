@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('program_weekday');
             $table->string('show_start_time');
             $table->string('show_end_time');
-            #relationship with shows table
-            $table->unsignedBigInteger('show_id');
+            //relationship with shows table
+            $table->unsignedBigInteger('show_id'); // one to one relationship
             $table->foreign('show_id')->references('id')->on('shows')->onDelete('cascade');
             $table->timestamps();
         });

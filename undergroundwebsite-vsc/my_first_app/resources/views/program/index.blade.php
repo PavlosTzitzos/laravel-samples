@@ -19,7 +19,7 @@
                             <th>Week Day</th>
                             <th>Start Time</th>
                             <th>End Time</th>
-                            <th>Show ID</th>
+                            <th>Show Name</th>
                             @auth
                             <th>Edit</th>
                             <th>Delete</th>
@@ -30,7 +30,7 @@
                             <th>{{$program->program_weekday}}</th>
                             <th>{{$program->show_start_time}}</th>
                             <th>{{$program->show_end_time}}</th>
-                            <th>{{$program->show_id}}</th>
+                            <th>{{$program->show->show_name}}</th>
                             @auth
                             <th>
                                 <a href="{{route('program.edit',['program'=> $program])}}">Edit</a>

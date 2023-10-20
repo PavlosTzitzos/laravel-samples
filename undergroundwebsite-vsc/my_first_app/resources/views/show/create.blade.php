@@ -60,10 +60,10 @@
                         var addButton = $('#add-producer');
 
                         addButton.click(function() {
-                            dynamicForm.append('<div class="row"><div class="col"><input type="name" class="form-control" name="producers[]"></div><div class="col"><button type="button" class="btn btn-danger">Remove Producer</button></div></div><br>');
+                            dynamicForm.append('<div class="row"><div class="col"><input type="name" class="form-control" name="producers[]"></div><div class="col"><button type="button" id="remove-producer" class="btn btn-danger">Remove Producer</button></div></div><br>');
                         });
 
-                        dynamicForm.on('click', '.remove-producer', function() {
+                        dynamicForm.on('click', '#remove-producer', function() {
                             $(this).prev('input').remove();
                             $(this).remove();
                         });

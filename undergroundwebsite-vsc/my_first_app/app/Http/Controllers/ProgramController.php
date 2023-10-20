@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Program;
+use App\Models\Show;
 
 class ProgramController extends Controller
 {
@@ -16,13 +17,15 @@ class ProgramController extends Controller
 
     public function create()
     {
-        return view('program.create');
+        $shows = Show::all();
+        return view('program.create',['shows' => $shows]);
     }
 
     public function edit(Program $program)
     {
         //dd($program); # for debugging
-        return view('program.edit',['program'=>$program]);
+        $shows = Show::all();
+        return view('program.edit',['program'=>$program , 'shows' => $shows]);
     }
 
     public function delete(Program $program)
@@ -39,7 +42,7 @@ class ProgramController extends Controller
     
     public function store(Request $request)
     {
-        //dd($request); # for debugging
+        //dd($request); // for debugging
         $data = $request->validate([
             'program_weekday' => 'required',
             'show_start_time' => 'required',

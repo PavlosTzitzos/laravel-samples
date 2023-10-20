@@ -19,6 +19,8 @@
                             <th>Name</th>
                             <th>Description</th>
                             <th>Logo</th>
+                            <th>Producers</th>
+                            <th>Time</th>
                             @auth
                             <th>Edit</th>
                             <th>Delete</th>
@@ -29,6 +31,13 @@
                             <th>{{$show->show_name}}</th>
                             <th>{{$show->show_description}}</th>
                             <th>{{$show->show_logo}}</th>
+                            <th>
+                            <!--@ foreach($show->producers as $producer)
+                            { { $producer->first_name}}
+                            @ endforeach
+                            -->
+                            </th>
+                            <th>{{$show->program?$show->program->program_weekday:''}}</th>
                             @auth
                             <th>
                                 <a href="{{route('show.edit',['show'=> $show])}}">Edit</a>
@@ -40,6 +49,12 @@
                         </tr>
                         @endforeach
                     </table>
+                    <!--
+                    Producers :
+                    @ foreach($shows->producers as $producer)
+                        <p>1. { {$producer->first_name}}</p>
+                    @ endforeach
+                    -->
                 </div>
                 @auth
                 <div class="d-flex justify-content-around">

@@ -122,7 +122,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY'), // please change before deployment !!!
 
     'cipher' => 'AES-256-CBC',
 

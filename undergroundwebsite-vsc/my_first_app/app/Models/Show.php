@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Producer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,11 +9,14 @@ class Show extends Model
 {
     use HasFactory;
 
+    /* The table this model is connected to. */
+    protected $table = 'shows';
+
     /* Attributes the user can edit */
     protected $fillable = [
         'show_name',
         'show_description',
-        'show_logo'
+        'show_logo',
     ];
 
     /**
@@ -22,7 +24,7 @@ class Show extends Model
      */
     public function program()
     {
-        return $this->hasOne('App\Models\Program');
+        return $this->hasOne(Program::class);
     }
 
     /**
@@ -30,6 +32,6 @@ class Show extends Model
      */
     public function producers()
     {
-        return $this->belongsToMany(Producer::class,'show_producers', 'show_id', 'producer_id');
+        return $this->belongsToMany(Producer::class);
     }
 }

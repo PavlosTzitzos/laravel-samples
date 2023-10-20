@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Show;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,6 +9,9 @@ class Program extends Model
 {
     use HasFactory;
     
+    /* The table this model is connected to. */
+    protected $table = 'programs';
+
     /* Attributes the user can edit */
     protected $fillable = [
         'program_weekday',
@@ -22,6 +24,6 @@ class Program extends Model
      */
     public function show()
     {
-        return $this->hasOne('App\Models\Show');
+        return $this->belongsTo(Show::class);
     }
 }

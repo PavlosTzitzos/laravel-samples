@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('show_producers', function (Blueprint $table) {
-            $table->id();
+        Schema::create('producer_show', function (Blueprint $table) {
+            //$table->id();
             $table->unsignedBigInteger('producer_id');
             $table->foreign('producer_id')->references('id')->on('producers')->onDelete('cascade');
             $table->unsignedBigInteger('show_id');
             $table->foreign('show_id')->references('id')->on('shows')->onDelete('cascade');
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('show_producers');
+        Schema::dropIfExists('producer_show');
     }
 };

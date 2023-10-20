@@ -29,5 +29,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'underground1003@gmail.com',
             'password' => '12345678'
         ]);
+
+        // \App\Models\Producer::factory()->create([
+        //     'first_name' => 'test',
+        //     'second_name' => 'test',
+        // ]);
+
+        // \App\Models\Producer::factory()->create([
+        //     'first_name' => 'user2',
+        //     'second_name' => 'user2',
+        // ]);
     }
 }

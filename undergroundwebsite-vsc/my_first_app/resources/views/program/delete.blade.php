@@ -28,9 +28,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="show_id" class="col-sm-2 col-form-label"> Show Id </label>
+                        <label for="show_id" class="col-sm-2 col-form-label"> Show Name </label>
                         <div class="col-sm-10">
-                            <input type="number" name="show_id" id="show_id" class="form-control" value="{{$program->show_id}}" disabled/>
+                            <input type="name" name="show_id" id="show_id" class="form-control" value="{{$program->show->show_name}}" disabled/>
                         </div>
                     </div>
                     <div class="d-flex justify-content-around">
