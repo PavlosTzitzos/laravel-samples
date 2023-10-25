@@ -44,7 +44,7 @@
                     <div class="form-group row">
                         <label for="show_end_time" class="col-sm-2 col-form-label"> End Time </label>
                         <div class="col-sm-10">
-                            <input type="time" name="show_end_time" id="show_end_time" class="form-control"/>
+                            <input type="time" name="show_end_time" id="show_end_time" class="form-control" value="" disabled/>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -67,4 +67,35 @@
         </div>
     </div>
 </div>
+<script>
+    // script using chatgpt :)
+    document.getElementById("show_start_time").addEventListener("input", function() {
+    // Get the value of the Start Time input
+    const startTime = this.value;
+
+    // Check if a valid time is entered
+    if (/^([01]\d|2[0-3]):([0-5]\d)$/.test(startTime)) {
+        // Parse the Start Time as hours and minutes
+        const [startHours, startMinutes] = startTime.split(":");
+        
+        // Calculate the End Time as 2 hours plus the Start Time
+        let endHours = parseInt(startHours) + 2;
+        let endMinutes = parseInt(startMinutes);
+
+        // Handle cases where the End Time crosses over to the next day
+        if (endHours >= 24) {
+            endHours -= 24;
+        }
+
+        // Format the End Time
+        const endTime = `${endHours.toString().padStart(2, "0")}:${endMinutes.toString().padStart(2, "0")}`;
+        
+        // Set the calculated End Time in the End Time input
+        document.getElementById("show_end_time").value = endTime;
+    } else {
+        // Clear the End Time input if an invalid Start Time is entered
+        document.getElementById("show_end_time").value = "";
+    }
+    });
+</script>
 @endsection

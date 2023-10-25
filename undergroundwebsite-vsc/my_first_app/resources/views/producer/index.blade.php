@@ -29,6 +29,7 @@
                             <th>Delete</th>
                             @endauth
                         </tr>
+                        
                         @foreach($producers as $producer)
                         <tr>
                             <th>{{$producer->first_name}}</th>

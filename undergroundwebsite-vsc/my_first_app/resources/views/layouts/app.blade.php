@@ -49,13 +49,13 @@
                             <a class="nav-link" href="{{url('/')}}">Main</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('producer.index')}}">Producers</a>
+                            <a class="nav-link" href="{ { route('producer.index')}}">Producers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('show.index')}}">Shows</a>
+                            <a class="nav-link" href="{ { route('producer.index')}}">Shows</a><!-- show.index -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('program.index')}}">Program of the week</a>
+                            <a class="nav-link" href="{ {route('program.index')}}">Program of the week</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Now On Air</a><!-- { { route('current_next_show.index')}}-->
@@ -78,13 +78,13 @@
                                 </li>
                             @endif
 
-                            <!--
-                            @ if (Route::has('register'))
+                            
+                            @if(Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @ endif
-                            -->
+                            @endif
+                            
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -158,5 +158,7 @@
             <input id="aVolume" type="range" min="0" max="1" value="1" step="0.1" />
         </div>
     </div>
+    <!-- scripts section -->
+    <script type="text/javascript" src="../js/dynamic-input-fields.js"></script>
 </body>
 </html>

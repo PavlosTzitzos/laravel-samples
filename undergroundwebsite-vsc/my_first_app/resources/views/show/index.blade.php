@@ -32,10 +32,11 @@
                             <th>{{$show->show_description}}</th>
                             <th>{{$show->show_logo}}</th>
                             <th>
-                            <!--@ foreach($show->producers as $producer)
-                            { { $producer->first_name}}
-                            @ endforeach
-                            -->
+                            @foreach($show->producers as $producer)
+                                {{$producer->first_name}} {{$producer->second_name?$producer->second_name:''}} {{$producer->last_name}}
+                                <br>
+                            @endforeach
+                            
                             </th>
                             <th>{{$show->program?$show->program->program_weekday:''}}</th>
                             @auth

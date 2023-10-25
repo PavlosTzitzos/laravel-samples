@@ -46,6 +46,46 @@ D. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin) , Composer (used for php)
 - [Authentication , image handling , Vue.JS](https://www.youtube.com/watch?v=ImtZ5yENzgE)
 - [Below docs]
 
+# About Authentication System :
+
+- [IEEE Best Practices for Authentication Framework / System](https://cybersecurity.ieee.org/blog/2016/06/02/design-best-practices-for-an-authentication-system/)
+
+Summary of the above source :
+
+In an authentication system there are several levels and a big checklist that we need to make sure we have in our application.
+
+1. Authorization after Authentication !!
+
+2. Authentication Patterns
+
+3. Authentication Checklist
+
+4. Authorization Patterns
+
+5. Authorization Checklist
+
+6. Other Considerations
+
+For the purposes of this application we MUST have an Authentication System with :
+
+1. Authorize with token
+
+2. 2-Factor Auth
+
+3. CSRF
+
+4. Session Cookie
+
+5. Logging
+
+6. Proper Password Storage
+
+7. Proper Session Management
+
+8. Credentials
+
+9. Protect against attacks (online brute force , session fixation , sql-injection , command injection , XSS )
+
 # LARAVEL PHP FRAMEWORK
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
