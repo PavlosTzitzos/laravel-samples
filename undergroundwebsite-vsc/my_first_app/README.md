@@ -41,10 +41,22 @@ D. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin) , Composer (used for php)
 - [VSCode download page - choose the right one for you](https://code.visualstudio.com/download)
 - [VSCode Laravel Extension](https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade)
 - [NodeJS download page - available for all types](https://nodejs.org/en/download)
+- [Video of the above three - installing for the first time](https://www.youtube.com/watch?v=2qgS_MCvDfk&list=PLnXGuXovKemRFG1Ghd6NZJXhwjaG_sQ5K)
 - [Chatango - The chat of the site](https://chatango.com/)
 - [How to implement CRUD in Laravel](https://www.youtube.com/watch?v=_LA9QsgJ0bw)
 - [Authentication , image handling , Vue.JS](https://www.youtube.com/watch?v=ImtZ5yENzgE)
 - [Below docs]
+
+# Cloning this repository :
+
+- Download and install : NodeJS , XAMPP , Composer , an editor (eg VSCode)
+
+- Create a new Folder.
+
+- Follow [these](https://dev.to/nobleokechi/how-to-clone-and-setup-laravel-project-from-github-3oe6) instructions.
+
+- If an error occur and is something like "...The zip extension and unzip/7z commands are both missing..." then according to [this](https://stackoverflow.com/questions/75050370/the-zip-extension-and-unzip-7z-commands-are-both-missing-skipping-in-windows) go to C:\xampp\php\php.ini file find the ";extension=zip" and uncomment it by changing it into this: "extesion=zip" 
+
 
 # About Authentication System :
 
