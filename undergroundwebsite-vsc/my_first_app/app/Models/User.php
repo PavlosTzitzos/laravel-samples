@@ -44,13 +44,4 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    /**
-     * The role that should be given.
-     */
-    protected function role(): Attribute
-    {
-        return new Attribute(
-            get: fn($value) => ["user","editor","admin"][$value],
-        );
-    }
 }

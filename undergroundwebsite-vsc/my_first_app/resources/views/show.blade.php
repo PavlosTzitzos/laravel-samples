@@ -13,13 +13,6 @@
                     </div>
                     @endif
                 </div>
-                @if (auth()->check()) 
-                    @can('isAdmin')
-                        <div class="d-flex justify-content-around">
-                            <a href="{{route('show.create')}}" id="show-create" name="show-create" class="btn btn-primary">Create New Show</a>
-                        </div>
-                    @endcan
-                @endif
                 <div>
                     <table class="table">
                         <tr>
@@ -28,12 +21,6 @@
                             <th>Logo</th>
                             <th>Producers</th>
                             <th>Time</th>
-                            @if (auth()->check()) 
-                                @can('isAdmin')
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                @endcan
-                            @endif
                         </tr>
                         @foreach($shows as $show)
                         <tr>
@@ -48,16 +35,6 @@
                             
                             </th>
                             <th>{{$show->program?$show->program->program_weekday:''}}</th>
-                            @if (auth()->check()) 
-                                @can('isAdmin')
-                                    <th>
-                                        <a href="{{route('show.edit',['show'=> $show])}}">Edit</a>
-                                    </th>
-                                    <th>
-                                        <a href="{{route('show.delete',['show'=> $show])}}">Delete</a>
-                                    </th>
-                                @endcan
-                            @endif
                         </tr>
                         @endforeach
                     </table>

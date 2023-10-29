@@ -17,13 +17,15 @@ class ShowController extends Controller
 
     public function create()
     {
-        if (Auth::check()) {
-            // The user is logged in...
-            $producers = Producer::all();
-            return view('show.create',['producers' => $producers]);
-        } else {
-            return view('show.index');
-        }
+        $this->authorize('can:create');
+        return view('show.create',['producers' => $producers]);
+        // if (Auth::check()) {
+        //     // The user is logged in...
+        //     $producers = Producer::all();
+        //     return view('show.create',['producers' => $producers]);
+        // } else {
+        //     return view('show.index');
+        // }
     }
 
     public function edit(Show $show)
@@ -31,6 +33,7 @@ class ShowController extends Controller
         //dd($show); // for debugging
         //dd($show->producers);
 
+        $this->authorize('can:view',$show);
         $old_producers = $show->producers;
         $all_producers = Producer::all();
         return view('show.edit',['show'=>$show,'old_producers'=>$old_producers,'all_producers'=>$all_producers]);
@@ -38,11 +41,13 @@ class ShowController extends Controller
 
     public function delete(Show $show)
     {
+        $this->authorize('can:delete',$show);
         return view('show.delete',['show'=>$show]);
     }
 
     public function destroy(Show $show)
     {
+        $this->authorize('can:forceDelete',$show);
         $show->delete();
 
         return redirect(route('show.index'))->with('success','Show Deleted Successfully');
@@ -93,6 +98,7 @@ class ShowController extends Controller
 
     public function update(Show $show, Request $request)
     {
+        $this->authorize('can:update',$show);
         //dd($request); # for debugging
         $data = $request->validate([
             'show_name' => 'required',

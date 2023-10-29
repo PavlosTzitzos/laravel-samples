@@ -38,8 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        // Never
-        //$this->middleware('guest');
+        $this->middleware('guest');
     }
 
     /**
@@ -65,11 +64,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // Disable creation
-        // return User::create([
-        //     'name' => $data['name'],
-        //     'email' => $data['email'],
-        //     'password' => Hash::make($data['password']),
-        // ]);
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
     }
 }

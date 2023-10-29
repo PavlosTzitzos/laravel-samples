@@ -13,7 +13,13 @@
                     </div>
                     @endif
                 </div>
-                
+                @if (auth()->check()) 
+                    @can('isAdmin')
+                        <div class="d-flex justify-content-around">
+                            <a href="{{route('producer.create')}}" id="producer-create" name="producer-create" class="btn btn-primary">Create New Producer</a>
+                        </div>
+                    @endcan
+                @endif
                 <div>
                     <table class="table">
                         <tr>
@@ -22,12 +28,14 @@
                             <th>Last Name</th>
                             <th>Description</th>
                             <th>Photo</th>
-                            @auth
-                            <th>Phone Number</th>
-                            <th>E-mail</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                            @endauth
+                            @if (auth()->check()) 
+                                @can('isAdmin')
+                                    <th>Phone Number</th>
+                                    <th>E-mail</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                @endcan
+                            @endif
                         </tr>
                         
                         @foreach($producers as $producer)
@@ -37,25 +45,22 @@
                             <th>{{$producer->last_name}}</th>
                             <th>{{$producer->description}}</th>
                             <th>{{$producer->photo}}</th>
-                            @auth
-                            <th>{{$producer->phone_number}}</th>
-                            <th>{{$producer->email}}</th>
-                            <th>
-                                <a href="{{route('producer.edit',['producer'=> $producer])}}">Edit</a>
-                            </th>
-                            <th>
-                                <a href="{{route('producer.delete',['producer'=> $producer])}}">Delete</a>
-                            </th>
-                            @endauth
+                            @if (auth()->check()) 
+                                @can('isAdmin')
+                                    <th>{{$producer->phone_number}}</th>
+                                    <th>{{$producer->email}}</th>
+                                    <th>
+                                        <a href="{{route('producer.edit',['producer'=> $producer])}}">Edit</a>
+                                    </th>
+                                    <th>
+                                        <a href="{{route('producer.delete',['producer'=> $producer])}}">Delete</a>
+                                    </th>
+                                @endcan
+                            @endif
                         </tr>
                         @endforeach
                     </table>
                 </div>
-                @auth
-                <div class="d-flex justify-content-around">
-                    <a href="{{route('producer.create')}}" id="producer-create" name="producer-create" class="btn btn-primary">Create New Producer</a>
-                </div>
-                @endauth
             </div>
         </div>
     </div>

@@ -16,22 +16,26 @@ class ProducerController extends Controller
 
     public function create()
     {
+        $this->authorize('can:create');
         return view('producer.create');
     }
 
     public function edit(Producer $producer)
     {
+        $this->authorize('can:view',$producer);
         //dd($producer); # for debugging
         return view('producer.edit',['producer'=>$producer]);
     }
 
     public function delete(Producer $producer)
     {
+        $this->authorize('can:delete',$producer);
         return view('producer.delete',['producer'=>$producer]);
     }
 
     public function destroy(Producer $producer)
     {
+        $this->authorize('can:forceDelete',$producer);
         $producer->delete();
 
         return redirect(route('producer.index'))->with('success','Producer Deleted Successfully');
@@ -55,6 +59,7 @@ class ProducerController extends Controller
 
     public function update(Producer $producer, Request $request)
     {
+        $this->authorize('can:update',$producer);
         //dd($request); # for debugging
         $data = $request->validate([
             'first_name' => 'required',

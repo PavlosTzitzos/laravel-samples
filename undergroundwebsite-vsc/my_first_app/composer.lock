@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f705d7852264594fa34c0f6061cd77c4",
+    "content-hash": "2c7f1081ee4a0d83dbd3a0de44da24ee",
     "packages": [
         {
             "name": "brick/math",
@@ -971,6 +971,62 @@
             "time": "2023-08-27T10:19:19+00:00"
         },
         {
+            "name": "label84/laravel-hours-helper",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Label84/laravel-hours-helper.git",
+                "reference": "a5ac348e382b1a0dd6e57b28edc0d6eb00288109"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Label84/laravel-hours-helper/zipball/a5ac348e382b1a0dd6e57b28edc0d6eb00288109",
+                "reference": "a5ac348e382b1a0dd6e57b28edc0d6eb00288109",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^9.0|^10.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "nunomaduro/larastan": "^2.0",
+                "orchestra/testbench": "^7.0|^8.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Label84\\HoursHelper\\HoursHelperServiceProvider"
+                    ],
+                    "aliases": {
+                        "HoursHelper": "Label84\\HoursHelper\\Facades\\HoursHelper"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Label84\\HoursHelper\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Label84",
+                    "email": "info@label84.com"
+                }
+            ],
+            "description": "Creates a Collection of times with a given interval.",
+            "support": {
+                "issues": "https://github.com/Label84/laravel-hours-helper/issues",
+                "source": "https://github.com/Label84/laravel-hours-helper/tree/v1.2.1"
+            },
+            "time": "2023-02-11T20:01:12+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v10.29.0",
             "source": {
@@ -1817,6 +1873,76 @@
                 }
             ],
             "time": "2023-10-17T14:13:20+00:00"
+        },
+        {
+            "name": "marvinlabs/laravel-discord-logger",
+            "version": "v1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marvinlabs/laravel-discord-logger.git",
+                "reference": "aaa08fda2a1b7c58373622f8cd5b955df1d36b91"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marvinlabs/laravel-discord-logger/zipball/aaa08fda2a1b7c58373622f8cd5b955df1d36b91",
+                "reference": "aaa08fda2a1b7c58373622f8cd5b955df1d36b91",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.3|^7.0",
+                "illuminate/support": "^7.0|^8.0|^9.0|^10.0",
+                "php": ">=7.3 | ^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^5.0|^6.0|^8.0",
+                "phpunit/phpunit": "^8.0|^9.0",
+                "roave/security-advisories": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MarvinLabs\\DiscordLogger\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MarvinLabs\\DiscordLogger\\": "src/DiscordLogger"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vincent Mimoun-Prat",
+                    "email": "contact@vincentprat.info",
+                    "homepage": "https://vincentprat.info",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Logging to a discord channel in Laravel",
+            "keywords": [
+                "discord",
+                "laravel",
+                "logger",
+                "logging"
+            ],
+            "support": {
+                "issues": "https://github.com/marvinlabs/laravel-discord-logger/issues",
+                "source": "https://github.com/marvinlabs/laravel-discord-logger/tree/v1.4.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/vpratfr",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-04-18T08:24:22+00:00"
         },
         {
             "name": "monolog/monolog",

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CurrentShow;
+use App\Models\Show;
 
 class HomeController extends Controller
 {
@@ -23,21 +25,31 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $current_show = CurrentShow::all();
+        $data = $current_show->where('priority','=',0);
+        foreach($data as $dt)
+        {
+            $priority_0 = $dt->show_id;
+        }
+        $current_show = Show::find($priority_0);
+        
+        //dd($current_show); // for debugging
+        
+        return view('home.index',['current_show' => $current_show]);
     }
-
-    public function userHome()
+    public function edit(CurrentShow $current_show)
     {
-        return view('home',["msg"=>"I am a user role."]);
+        $shows = Show::all();
+        return view('home.edit',['current_show' => $current_show,'shows' => $shows]);
     }
-
-    public function editorHome()
+    public function update(CurrentShow $current_show , Request $request)
     {
-        return view('home',["msg"=>"I am a editor role."]);
-    }
+        $this->authorize('can:update',$current_show);
 
-    public function adminHome()
-    {
-        return view('home',["msg"=>"I am a admin role."]);
+        $data = $request->validate([
+            'show_id' => 'required',
+        ]);
+        $program->update($data);
+        return redirect(route('home.index'))->with('success','Current Show On Air !!');
     }
 }

@@ -45,6 +45,7 @@ D. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin) , Composer (used for php)
 - [Chatango - The chat of the site](https://chatango.com/)
 - [How to implement CRUD in Laravel](https://www.youtube.com/watch?v=_LA9QsgJ0bw)
 - [Authentication , image handling , Vue.JS](https://www.youtube.com/watch?v=ImtZ5yENzgE)
+- [Authorization in laravel using GATES and POLICIES](https://www.youtube.com/watch?v=q-Fl_Qcfy5o)
 - [Below docs]
 
 # Cloning this repository :
@@ -57,6 +58,11 @@ D. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin) , Composer (used for php)
 
 - If an error occur and is something like "...The zip extension and unzip/7z commands are both missing..." then according to [this](https://stackoverflow.com/questions/75050370/the-zip-extension-and-unzip-7z-commands-are-both-missing-skipping-in-windows) go to C:\xampp\php\php.ini file find the ";extension=zip" and uncomment it by changing it into this: "extesion=zip" 
 
+# Logging into discord channel :
+
+- [Check the docs](https://laravel.com/docs/10.x/logging)
+
+- [Laravel Discord Logger](https://laravelpackages.net/marvinlabs/laravel-discord-logger)
 
 # About Authentication System :
 
@@ -82,19 +88,17 @@ For the purposes of this application we MUST have an Authentication System with 
 
 1. Authorize with token
 
-2. 2-Factor Auth
+2. CSRF - OK
 
-3. CSRF
-
-4. Session Cookie
+4. Session Cookie 
 
 5. Logging
 
-6. Proper Password Storage
+6. Proper Password Storage - OK
 
-7. Proper Session Management
+7. Proper Session Management - OK
 
-8. Credentials
+8. Credentials - OK
 
 9. Protect against attacks (online brute force , session fixation , sql-injection , command injection , XSS )
 

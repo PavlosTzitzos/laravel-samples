@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Gefyra') }}</div>
 
                 <div class="card-body">
-                    
+                    Add some description here...
                 </div>
             </div>
         </div>

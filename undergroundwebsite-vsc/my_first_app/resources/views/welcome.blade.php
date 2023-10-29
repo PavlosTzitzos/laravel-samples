@@ -14,14 +14,13 @@
                         </div>
                         <div class="bottom-text">
                             <h2>Now On-Air</h2>
-                            <!--
-                            <h4>{ {$ current_show -> $ show_name}}</h4>
+                            <h4>{{$current_show->show_name}}</h4>
                             <div class="producers-broadcast">
-                                @ foreach ($current_show->producer as $show_producer)
-                                <h6>{ {$ show_producer}}</h6>
-                                @ endforeach
+                                @foreach($current_show->producers as $producer)
+                                    {{$producer->first_name}} {{$producer->second_name?$producer->second_name:''}} {{$producer->last_name}}
+                                    <br>
+                                @endforeach
                             </div>
-                        -->
                         </div>
                     </div>
                 </div>
@@ -34,10 +33,9 @@
                             <h2>Coming Next</h2>
                             <h4>X METAL ZONE</h4>
                             <div class="producers-broadcast">
-                                <h6>Παραγωγός 1</h6>
-                                <h6>Παραγωγός 2</h6>
-                                <h6>Παραγωγός 3</h6>
-                                <h6>Παραγωγός 4</h6>
+                                @ foreach($current->show_id->where($priority==1) as $show)
+                                    <h6>{ { $show$producer->first_name}}</h6>
+                                @ endforeach
                             </div>
                         </div>
                     </div>
