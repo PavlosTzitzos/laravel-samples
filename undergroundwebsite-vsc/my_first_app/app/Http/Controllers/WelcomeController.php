@@ -7,6 +7,7 @@ use App\Models\Program;
 use App\Models\Producer;
 use App\Models\Show;
 use App\Models\CurrentShow;
+use App\Models\NextShow;
 
 class WelcomeController extends Controller
 {
@@ -14,17 +15,15 @@ class WelcomeController extends Controller
     public function index()
     {
 
-        $current_show = CurrentShow::all();
-        $data = $current_show->where('priority','=',0);
-        foreach($data as $dt)
-        {
-            $priority_0 = $dt->show_id;
-        }
-        $current_show = Show::find($priority_0);
-        
+        $current_show = CurrentShow::find(1);
+        $current_show_details = Show::find($current_show->show_id);
         //dd($current_show); // for debugging
         
-        return view('welcome',['current_show' => $current_show]);
+        $next_show = NextShow::find(1);
+        $next_show_details = Show::find($next_show->show_id);
+        //dd($next_show); // for debugging
+        
+        return view('welcome',['current_show' => $current_show_details,'next_show' => $next_show_details]);
     }
 
     public function show()

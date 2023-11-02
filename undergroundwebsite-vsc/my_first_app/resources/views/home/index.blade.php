@@ -30,10 +30,10 @@
 
                     <h3>Current Show</h3>
                     <div class="d-flex justify-content-around">
-                        {{$current_show->show_name}}
+                        {{$current_show_details->show_name}}
                     </div>
                     <div class="d-flex justify-content-around">
-                        <div class="p-2"><a href="{{route('home.edit',['current_show'=> $current_show])}}"id="program-create" name="producer-create" class="btn btn-primary">Edit Current Show</a></div>
+                        <div class="p-2"><a href="{{route('home.edit',['current_show'=> 1])}}"id="current-show-edit" name="current-show-edit" class="btn btn-primary">Edit Current Show</a></div>
                     </div>
 
                 </div>

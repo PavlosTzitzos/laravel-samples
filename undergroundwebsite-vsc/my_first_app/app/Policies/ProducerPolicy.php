@@ -13,8 +13,11 @@ class ProducerPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
-        return ($user->role == 'admin')||($user->role == 'editor')||($user->role == 'user');
+        if(($user->role == 'admin')||($user->role == 'editor')||($user->role == 'user'))
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -22,8 +25,11 @@ class ProducerPolicy
      */
     public function view(User $user, Producer $producer): bool
     {
-        //
-        return ($user->role == 'admin')||($user->role == 'editor')||($user->role == 'user');
+        if(($user->role == 'admin')||($user->role == 'editor')||($user->role == 'user'))
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -31,8 +37,11 @@ class ProducerPolicy
      */
     public function create(User $user): bool
     {
-        //
-        return $user->role == 'admin';
+        if($user->role == 'admin')
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -40,8 +49,11 @@ class ProducerPolicy
      */
     public function update(User $user, Producer $producer): bool
     {
-        //
-        return $user->role == 'admin';
+        if($user->role == 'admin')
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -49,8 +61,11 @@ class ProducerPolicy
      */
     public function delete(User $user, Producer $producer): bool
     {
-        //
-        return $user->role == 'admin';
+        if($user->role == 'admin')
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -58,8 +73,11 @@ class ProducerPolicy
      */
     public function restore(User $user, Producer $producer): bool
     {
-        //
-        return $user->role == 'admin';
+        if($user->role == 'admin')
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -67,7 +85,10 @@ class ProducerPolicy
      */
     public function forceDelete(User $user, Producer $producer): bool
     {
-        //
-        return $user->role == 'admin';
+        if($user->role == 'admin')
+        {
+            return true;
+        }
+        return false;
     }
 }

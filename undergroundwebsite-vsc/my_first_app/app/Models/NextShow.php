@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CurrentShow extends Model
+class NextShow extends Model
 {
     use HasFactory;
 
     /* The table this model is connected to. */
-    protected $table = 'current_shows';
+    protected $table = 'next_shows';
 
     protected $fillable = [
         'show_id',

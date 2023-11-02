@@ -10,52 +10,29 @@ class ShowController extends Controller
 {
     public function index()
     {
-        //return view('show.index');
+        $this->authorize('viewAny',Program::class);
         $shows = Show::all();
         return view('show.index',['shows' => $shows]);
     }
 
+    public function show(Show $show)
+    {
+        $this->authorize('view',$show);
+        //dd($producer); // for debugging
+        return view('show.show',['show'=>$show]);
+    }
+
     public function create()
     {
-        $this->authorize('can:create');
+        $this->authorize('create',Show::class);
+        $producers = Producer::all();
         return view('show.create',['producers' => $producers]);
-        // if (Auth::check()) {
-        //     // The user is logged in...
-        //     $producers = Producer::all();
-        //     return view('show.create',['producers' => $producers]);
-        // } else {
-        //     return view('show.index');
-        // }
     }
 
-    public function edit(Show $show)
-    {
-        //dd($show); // for debugging
-        //dd($show->producers);
-
-        $this->authorize('can:view',$show);
-        $old_producers = $show->producers;
-        $all_producers = Producer::all();
-        return view('show.edit',['show'=>$show,'old_producers'=>$old_producers,'all_producers'=>$all_producers]);
-    }
-
-    public function delete(Show $show)
-    {
-        $this->authorize('can:delete',$show);
-        return view('show.delete',['show'=>$show]);
-    }
-
-    public function destroy(Show $show)
-    {
-        $this->authorize('can:forceDelete',$show);
-        $show->delete();
-
-        return redirect(route('show.index'))->with('success','Show Deleted Successfully');
-    }
-    
     public function store(Request $request)
     {
-        //dd($request); // for debugging
+        $this->authorize('create',Show::class);
+        // dd($request); // for debugging
         
         //Step 1 : validations
         $data = $request->validate([
@@ -67,10 +44,6 @@ class ShowController extends Controller
             'producer_ids.*' => 'required|distinct|max:4',
         ]);
 
-        // if ($validation->fails()) {
-        //     return Response::make(['error' => $validation->errors()], 400);
-        // }
-
         // Step 2: Save Data like name , time , description
         $show = Show::create($data);
         
@@ -78,9 +51,9 @@ class ShowController extends Controller
         if($request->file('show_logo'))
         {
             $file = $request->file('show_logo');
-            $filename = date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('public/showlogos'), $filename);
-            $show['show_logo'] = $filename;
+            $file_path = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('public/showlogos'), $file_path);
+            $show['show_logo'] = $file_path;
         }
 
         // Step 4 : Save the relationship
@@ -92,14 +65,24 @@ class ShowController extends Controller
         //dd($producer_ids); //used for debugging
         $show->producers()->attach($producer_ids);
 
-        // Return
         return redirect(route('show.index'))->with('success','Show Created Successfully');
+    }
+
+    public function edit(Show $show)
+    {
+        //dd($show); // for debugging
+        //dd($show->producers);
+
+        $this->authorize('update',$show);
+        $old_producers = $show->producers;
+        $all_producers = Producer::all();
+        return view('show.edit',['show'=>$show,'old_producers'=>$old_producers,'all_producers'=>$all_producers]);
     }
 
     public function update(Show $show, Request $request)
     {
-        $this->authorize('can:update',$show);
-        //dd($request); # for debugging
+        $this->authorize('update',$show);
+        //dd($request); // for debugging
         $data = $request->validate([
             'show_name' => 'required',
             'show_description' => 'nullable',
@@ -107,10 +90,6 @@ class ShowController extends Controller
             'producer_ids' => 'required|array|min:1',
             'producer_ids.*' => 'required|distinct|max:4',
         ]);
-
-        // if ($validation->fails()) {
-        //     return Response::make(['error' => $validation->errors()], 400);
-        // }
 
         $show->update($data);
 
@@ -120,4 +99,19 @@ class ShowController extends Controller
 
         return redirect(route('show.index'))->with('success','Show Updated Successfully');
     }
+
+    public function delete(Show $show)
+    {
+        $this->authorize('delete',$show);
+        return view('show.delete',['show'=>$show]);
+    }
+
+    public function destroy(Show $show)
+    {
+        $this->authorize('delete',$show);
+        $show->delete();
+
+        return redirect(route('show.index'))->with('success','Show Deleted Successfully');
+    }
+    
 }

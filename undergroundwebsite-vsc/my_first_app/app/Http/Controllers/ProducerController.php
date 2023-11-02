@@ -7,43 +7,33 @@ use App\Models\Producer;
 
 class ProducerController extends Controller
 {
+    /**
+     * Index View -> Index Function -> HTTP GET producers
+     */
     public function index()
     {
-        //return view('producer.index');
+        $this->authorize('viewAny',Producer::class);
         $producers = Producer::all();
         return view('producer.index',['producers' => $producers]);
     }
 
+    public function show(Producer $producer)
+    {
+        $this->authorize('view',$producer);
+        //dd($producer); // for debugging
+        return view('producer.show',['producer'=>$producer]);
+    }
+
     public function create()
     {
-        $this->authorize('can:create');
+        $this->authorize('create',Producer::class);
         return view('producer.create');
     }
 
-    public function edit(Producer $producer)
-    {
-        $this->authorize('can:view',$producer);
-        //dd($producer); # for debugging
-        return view('producer.edit',['producer'=>$producer]);
-    }
-
-    public function delete(Producer $producer)
-    {
-        $this->authorize('can:delete',$producer);
-        return view('producer.delete',['producer'=>$producer]);
-    }
-
-    public function destroy(Producer $producer)
-    {
-        $this->authorize('can:forceDelete',$producer);
-        $producer->delete();
-
-        return redirect(route('producer.index'))->with('success','Producer Deleted Successfully');
-    }
-    
     public function store(Request $request)
     {
-        //dd($request); # for debugging
+        $this->authorize('create',Producer::class);
+        //dd($request); // for debugging
         $data = $request->validate([
             'first_name' => 'required',
             'second_name' => 'nullable',
@@ -57,10 +47,17 @@ class ProducerController extends Controller
         return redirect(route('producer.index'))->with('success','Producer Created Successfully');
     }
 
+    public function edit(Producer $producer)
+    {
+        $this->authorize('update',$producer);
+        //dd($producer); // for debugging
+        return view('producer.edit',['producer'=>$producer]);
+    }
+
     public function update(Producer $producer, Request $request)
     {
-        $this->authorize('can:update',$producer);
-        //dd($request); # for debugging
+        $this->authorize('update',$producer);
+        //dd($request); // for debugging
         $data = $request->validate([
             'first_name' => 'required',
             'second_name' => 'nullable',
@@ -72,5 +69,19 @@ class ProducerController extends Controller
         $producer->update($data);
 
         return redirect(route('producer.index'))->with('success','Producer Updated Successfully');
+    }
+
+    public function delete(Producer $producer)
+    {
+        $this->authorize('delete',$producer);
+        return view('producer.delete',['producer'=>$producer]);
+    }
+
+    public function destroy(Producer $producer)
+    {
+        $this->authorize('delete',$producer);
+        $producer->delete();
+
+        return redirect(route('producer.index'))->with('success','Producer Deleted Successfully');
     }
 }

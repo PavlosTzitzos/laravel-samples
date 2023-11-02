@@ -5,10 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Delete a Show') }}</div>
-                <form method="post" action="{{route('show.destroy',['show'=>$show])}}" enctype="multipart/form-data">
+                <div class="card-header">{{ __('Details of a Show') }}</div>
+                <form enctype="multipart/form-data">
                     @csrf
-                    @method('delete')
                     <div class="form-group row">
                         <label for="show_name" class="col-sm-2 col-form-label"> Show Name : </label>
                         <div class="col-sm-10">
@@ -52,8 +51,7 @@
                         </div>
                     </div>-->
                     <div class="d-flex justify-content-around">
-                        <div class="p-2"><button id="submit" name="submit" class="btn btn-danger">Confirm Delete Show</button></div>
-                        <div class="p-2"><a href="{{route('show.index')}}" id="cancel" name="cancel" class="btn btn-primary">Cancel</a></div>
+                        <div class="p-2"><a href="{{route('show.index')}}" id="cancel" name="cancel" class="btn btn-primary">Go back</a></div>
                     </div>
                 </form>
             </div>

@@ -31,11 +31,12 @@
                         </div>
                         <div class="bottom-text">
                             <h2>Coming Next</h2>
-                            <h4>X METAL ZONE</h4>
+                            <h4>{{$next_show->show_name}}</h4>
                             <div class="producers-broadcast">
-                                @ foreach($current->show_id->where($priority==1) as $show)
-                                    <h6>{ { $show$producer->first_name}}</h6>
-                                @ endforeach
+                                @foreach($next_show->producers as $producer)
+                                    {{$producer->first_name}} {{$producer->second_name?$producer->second_name:''}} {{$producer->last_name}}
+                                    <br>
+                                @endforeach
                             </div>
                         </div>
                     </div>

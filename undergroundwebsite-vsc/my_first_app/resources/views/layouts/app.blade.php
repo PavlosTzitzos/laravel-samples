@@ -44,7 +44,7 @@
                             <a class="nav-link" href="{{route('program.index')}}">Program of the week</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('home.index')}}">Now On Air</a><!-- { { route('current_next_show.index')}}-->
+                            <a class="nav-link" href="{{route('home.index')}}">Now On Air</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('gefyra')}}">Gefyra</a>

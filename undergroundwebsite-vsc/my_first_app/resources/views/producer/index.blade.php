@@ -36,6 +36,7 @@
                                     <th>Delete</th>
                                 @endcan
                             @endif
+                            <th>Details</th>
                         </tr>
                         
                         @foreach($producers as $producer)
@@ -57,6 +58,9 @@
                                     </th>
                                 @endcan
                             @endif
+                            <th>
+                                <a href="{{route('producer.show',['producer'=> $producer])}}">Details</a>
+                            </th>
                         </tr>
                         @endforeach
                     </table>

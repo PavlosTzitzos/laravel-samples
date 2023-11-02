@@ -34,12 +34,15 @@
                                     <th>Delete</th>
                                 @endcan
                             @endif
+                            <th>Details</th>
                         </tr>
                         @foreach($shows as $show)
                         <tr>
                             <th>{{$show->show_name}}</th>
                             <th>{{$show->show_description}}</th>
-                            <th>{{$show->show_logo}}</th>
+                            <th>
+                                <img src="{{ asset('public/showlogos/'.$show->show_logo) }}" style="height:120px; width:200px"/>
+                            </th>
                             <th>
                             @foreach($show->producers as $producer)
                                 {{$producer->first_name}} {{$producer->second_name?$producer->second_name:''}} {{$producer->last_name}}
@@ -58,6 +61,9 @@
                                     </th>
                                 @endcan
                             @endif
+                            <th>
+                                <a href="{{route('show.show',['show'=> $show])}}">Details</a>
+                            </th>
                         </tr>
                         @endforeach
                     </table>

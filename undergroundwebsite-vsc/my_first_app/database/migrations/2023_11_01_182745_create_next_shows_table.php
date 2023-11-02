@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('current_shows', function (Blueprint $table) {
+        Schema::create('next_shows', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('show_id');
             $table->foreign('show_id')->references('id')->on('shows')->onDelete('cascade');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('current_shows');
+        Schema::dropIfExists('next_shows');
     }
 };

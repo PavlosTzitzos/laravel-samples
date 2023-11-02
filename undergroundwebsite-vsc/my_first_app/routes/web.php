@@ -39,7 +39,7 @@ Route::get('/about', function () {
 
 # Auth routes :
 
-Auth::routes();
+// Auth::routes();
 
 /*
 To disable registration of new users :
@@ -49,33 +49,20 @@ Auth::routes(['register' => false]);
 
 # After log in :
 Route::get('/home',[HomeController::class,'index'])->name('home.index');
-Route::get('/home/current_show/{current_show}/edit',[HomeController::class,'edit'])->name('home.edit');
-Route::put('/home/current_show/{current_show}/update',[HomeController::class,'update'])->name('home.update');
-
-// Route::middleware(['auth','user-role:user'])->group(function()
-// {
-//     Route::get("/home",[HomeController::class,'userHome'])->name('home');
-// });
-
-// Route::middleware(['auth','user-role:editor'])->group(function()
-// {
-//     Route::get("/home",[HomeController::class,'editorHome'])->name('home');
-// });
-
-// Route::middleware(['auth','user-role:admin'])->group(function()
-// {
-//     Route::get("/home",[HomeController::class,'adminHome'])->name('home');
-// });
-
+Route::get('/home/current_show/edit',[HomeController::class,'edit'])->name('home.edit');
+Route::put('/home/current_show/update',[HomeController::class,'update'])->name('home.update');
 
 # HTTP GET methods
 
-Route::get('/home/program', [ProgramController::class,'index'])->name('program.index');
-Route::get('/home/show', [ShowController::class,'index'])->name('show.index');
-Route::get('/home/producer', [ProducerController::class,'index'])->name('producer.index');
+Route::get('/home/programs', [ProgramController::class,'index'])->name('program.index');
+Route::get('/home/shows', [ShowController::class,'index'])->name('show.index');
+Route::get('/home/producers', [ProducerController::class,'index'])->name('producer.index');
 
+Route::get('/home/program/{program}/details', [ProgramController::class,'show'])->name('program.show');
+Route::get('/home/show/{show}/details', [ShowController::class,'show'])->name('show.show');
+Route::get('/home/producer/{producer}/details', [ProducerController::class,'show'])->name('producer.show');
 
-Route::get('/home/show/create', [ShowController::class,'create'])->name('show.create')->middleware('can:create,show');
+Route::get('/home/show/create', [ShowController::class,'create'])->name('show.create')->middleware('auth');
 Route::get('/home/show/{show}/edit', [ShowController::class,'edit'])->name('show.edit')->middleware('auth');
 Route::get('/home/show/{show}/delete', [ShowController::class,'delete'])->name('show.delete')->middleware('auth');
 

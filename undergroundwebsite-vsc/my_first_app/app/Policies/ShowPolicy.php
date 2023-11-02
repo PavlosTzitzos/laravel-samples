@@ -13,8 +13,11 @@ class ShowPolicy
      */
     public function viewAny(User $user): bool
     {
-        // this is for ShowController@index
-        return ($user->role == 'admin')||($user->role == 'editor')||($user->role == 'user');
+        if(($user->role == 'admin')||($user->role == 'editor')||($user->role == 'user'))
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -22,7 +25,11 @@ class ShowPolicy
      */
     public function view(User $user, Show $show): bool
     {
-        // everyone can see he show info
+        if(($user->role == 'admin')||($user->role == 'editor')||($user->role == 'user'))
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -30,8 +37,11 @@ class ShowPolicy
      */
     public function create(User $user): bool
     {
-        //
-        return $user->role == 'admin';
+        if($user->role == 'admin')
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -39,8 +49,11 @@ class ShowPolicy
      */
     public function update(User $user, Show $show): bool
     {
-        //
-        return $user->role == 'admin';
+        if($user->role == 'admin')
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -48,8 +61,11 @@ class ShowPolicy
      */
     public function delete(User $user, Show $show): bool
     {
-        //
-        return $user->role == 'admin';
+        if($user->role == 'admin')
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -57,8 +73,11 @@ class ShowPolicy
      */
     public function restore(User $user, Show $show): bool
     {
-        //
-        return $user->role == 'admin';
+        if($user->role == 'admin')
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -66,7 +85,10 @@ class ShowPolicy
      */
     public function forceDelete(User $user, Show $show): bool
     {
-        //
-        return $user->role == 'admin';
+        if($user->role == 'admin')
+        {
+            return true;
+        }
+        return false;
     }
 }

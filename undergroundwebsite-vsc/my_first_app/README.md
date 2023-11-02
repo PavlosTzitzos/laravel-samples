@@ -90,9 +90,9 @@ For the purposes of this application we MUST have an Authentication System with 
 
 2. CSRF - OK
 
-4. Session Cookie 
+4. Session Cookie -???
 
-5. Logging
+5. Logging (in discord) - OK 
 
 6. Proper Password Storage - OK
 
@@ -101,6 +101,14 @@ For the purposes of this application we MUST have an Authentication System with 
 8. Credentials - OK
 
 9. Protect against attacks (online brute force , session fixation , sql-injection , command injection , XSS )
+
+# Authorization System
+
+Laravel has it's own authorization system called Gates and Principles.
+
+Principles are boolean values, their meaning is if the current user can have access to specific controller actions (methods).
+
+For example 
 
 # LARAVEL PHP FRAMEWORK
 

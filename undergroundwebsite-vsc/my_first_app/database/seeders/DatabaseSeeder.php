@@ -14,7 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        /* Seed Users table */
+        /**
+         * Seed Users table.
+         * Please seed the table with users / passwords / emails on Production 
+         */
 
         \App\Models\User::factory()->create([
             'name' => 'testuser1',
@@ -44,13 +47,30 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin'
         ]);
 
-        /* Seed Shows table : */
+        /**
+         * Seed Shows table.
+         * Please seed the table with this show on Production.
+         */
 
         \App\Models\Show::factory()->create([
             'show_name' => 'Underground Playlist',
             'show_description' => 'A playlist created from the web radio\'s producers. ',
             'show_logo' => 'C:\Users\pavlos\source\repos\laravel-samples\undergroundwebsite-vsc\my_first_app\resources\img\logo.png',
         ]);
+
+        /**
+         * Seed Current Show Table and Next Show Table with Show with id 1 
+         * It is the default playlist - Underground Web Radio Playlist
+         * Please seed this table on Production using the following code :
+         */
+        \App\Models\CurrentShow::factory()->create([
+            'show_id' => 1
+        ]);
+        \App\Models\NextShow::factory()->create([
+            'show_id' => 1
+        ]);
+
+        /* For debugging ONLY : */
 
         /* Seed Producers */
         // Create 25 data of the Producer Model
@@ -96,15 +116,6 @@ class DatabaseSeeder extends Seeder
             'show_start_time' => $hours[8],
             'show_end_time' => $hours[9],
             'show_id' => 5,
-        ]);
-
-        /**
-         * Seed Current Show Table with Show with id 1 
-         * It is the default playlist - Underground Web Radio Playlist
-         */
-        \App\Models\CurrentShow::factory()->create([
-            'show_id' => 1,
-            'priority' =>0
         ]);
 
     }

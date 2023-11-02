@@ -44,6 +44,7 @@
                                     <th>Delete</th>
                                 @endcan
                             @endif
+                            <th>Details</th>
                         </tr>
                         @foreach($programs as $program)
                         <tr>
@@ -69,6 +70,9 @@
                                 </th>
                                 @endcan
                             @endif
+                            <th>
+                                <a href="{{route('program.show',['program'=> $program])}}">Details</a>
+                            </th>
                         </tr>
                         @endforeach
                     </table>

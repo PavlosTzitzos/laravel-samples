@@ -32,7 +32,7 @@
                     <div class="form-group row">
                         <label for="show_description" class="col-sm-2 col-form-label">Description :</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="show_description" placeholder="optional description"></textarea>
+                            <input type="text" class="form-control" name="show_description" id="show_description" placeholder="optional description"></textarea>
                         </div>
                     </div>
                     <div class="form-group-file row">
