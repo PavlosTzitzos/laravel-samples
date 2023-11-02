@@ -26,7 +26,9 @@
                         <tr>
                             <th>{{$show->show_name}}</th>
                             <th>{{$show->show_description}}</th>
-                            <th>{{$show->show_logo}}</th>
+                            <th>
+                                <img src="{{ url('public/showlogos/'.$show->show_logo) }}" style="height: 100px; width: 150px;">
+                            </th>
                             <th>
                             @foreach($show->producers as $producer)
                                 {{$producer->first_name}} {{$producer->second_name?$producer->second_name:''}} {{$producer->last_name}}

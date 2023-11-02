@@ -9,7 +9,7 @@
                 <div>
                     @if($errors->any())
                     <ul>
-                        @foreach($erros->all() as $error)
+                        @foreach($errors->all() as $error)
                             <li>
                                 {{$error}}
                             </li>
@@ -17,7 +17,7 @@
                     </ul>
                     @endif
                 </div>
-                <form method="post" action="{{route('producer.update',['producer'=>$producer])}}">
+                <form method="post" action="{{route('producer.update',['producer'=>$producer])}}" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="form-group row">
@@ -48,6 +48,13 @@
                         <label for="email" class="col-sm-2 col-form-label">Email </label>
                         <div class="col-sm-10">
                             <input type="email" name="email" id="email"placeholder="e.g. example@example.com" value="{{$producer->email}}"/>
+                        </div>
+                    </div>
+                    <div class="form-group-file row">
+                        <label for="producer_image" class="col-sm-2 col-form-label"> Producer image : </label>
+                        <img src="{{ url('public/producerimage/'.$producer->producer_image) }}" style="height: 100px; width: 150px;">
+                        <div class="col-sm-10">
+                            <input type="file" name="producer_image" id="producer_image" class="form-control-file" value="{{$producer->producer_image}}"/>
                         </div>
                     </div>
                     <div class="d-flex justify-content-around">

@@ -56,6 +56,8 @@ class ShowController extends Controller
             $show['show_logo'] = $file_path;
         }
 
+        $show->save();
+
         // Step 4 : Save the relationship
         /*
          * The relationship producer_ids must be saved after the show is saved .
@@ -83,15 +85,29 @@ class ShowController extends Controller
     {
         $this->authorize('update',$show);
         //dd($request); // for debugging
+        
+        //Step 1 : validations
         $data = $request->validate([
             'show_name' => 'required',
             'show_description' => 'nullable',
-            'show_logo' => 'nullable|image|mimes:jpeg,jpg,png,gif,svg|max:2048',
+            //'show_logo' => 'nullable|mimes:jpeg,jpg,png,gif'
+            'show_logo' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048',
             'producer_ids' => 'required|array|min:1',
             'producer_ids.*' => 'required|distinct|max:4',
         ]);
 
         $show->update($data);
+
+        // Step 3: Upload Image and Save Image Name
+        if($request->file('show_logo'))
+        {
+            $file = $request->file('show_logo');
+            $file_path = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('public/showlogos'), $file_path);
+            $show['show_logo'] = $file_path;
+        }
+
+        $show->save();
 
         $new_producers = $request->producer_ids;
 

@@ -30,7 +30,9 @@
                             <th>{{$producer->second_name}}</th>
                             <th>{{$producer->last_name}}</th>
                             <th>{{$producer->description}}</th>
-                            <th>{{$producer->photo}}</th>
+                            <th>
+                                <img src="{{ url('public/producerImage/'.$producer->image) }}" style="height: 100px; width: 150px;">
+                            </th>
                         </tr>
                         @endforeach
                     </table>

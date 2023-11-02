@@ -18,10 +18,11 @@ class Producer extends Model
         'second_name',
         'last_name',
         'description',
-        'image',
+        'producer_image',
+        'created_by',
+        'updated_by',
         'phone_number',
         'email',
-        'photo'
     ];
     
     /**

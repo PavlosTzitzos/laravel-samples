@@ -45,7 +45,9 @@
                             <th>{{$producer->second_name}}</th>
                             <th>{{$producer->last_name}}</th>
                             <th>{{$producer->description}}</th>
-                            <th>{{$producer->photo}}</th>
+                            <th>
+                                <img src="{{ url('public/producerimage/'.$producer->producer_image) }}" style="height: 100px; width: 150px;">
+                            </th>
                             @if (auth()->check()) 
                                 @can('isAdmin')
                                     <th>{{$producer->phone_number}}</th>

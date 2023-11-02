@@ -44,8 +44,9 @@ D. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin) , Composer (used for php)
 - [Video of the above three - installing for the first time](https://www.youtube.com/watch?v=2qgS_MCvDfk&list=PLnXGuXovKemRFG1Ghd6NZJXhwjaG_sQ5K)
 - [Chatango - The chat of the site](https://chatango.com/)
 - [How to implement CRUD in Laravel](https://www.youtube.com/watch?v=_LA9QsgJ0bw)
-- [Authentication , image handling , Vue.JS](https://www.youtube.com/watch?v=ImtZ5yENzgE)
+- [Authentication , Vue.JS](https://www.youtube.com/watch?v=ImtZ5yENzgE)
 - [Authorization in laravel using GATES and POLICIES](https://www.youtube.com/watch?v=q-Fl_Qcfy5o)
+- [Image upload/view with validation](https://codesource.io/complete-laravel-8-image-upload-tutorial-with-example/)
 - [Below docs]
 
 # Cloning this repository :
@@ -108,7 +109,22 @@ Laravel has it's own authorization system called Gates and Principles.
 
 Principles are boolean values, their meaning is if the current user can have access to specific controller actions (methods).
 
-For example 
+# Observation Pattern
+
+The observation pattern consits of listeners and events. A small explaination would be :
+
+<< If the model has a change then make an event. >>
+
+So the listeners await for events. (Await for notification)
+
+Events are triggred by changes in entities or states of a form / model.
+
+Examples are the subscriber / publishers pattern , cart management to notify admin and buyer etc...
+
+# Repository Pattern and API
+
+Before implementing your API you need to implement the repository pattern in your application.
+
 
 # LARAVEL PHP FRAMEWORK
 

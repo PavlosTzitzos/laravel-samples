@@ -37,6 +37,7 @@
                     </div>
                     <div class="form-group-file row">
                         <label for="show_logo" class="col-sm-2 col-form-label"> Show Logo : </label>
+                        <img src="{{ url('public/showlogos/'.$show->show_logo) }}" style="height: 100px; width: 150px;">
                         <div class="col-sm-10">
                             <input type="file" name="show_logo" id="show_logo" class="form-control-file" value="{{$show->show_logo}}"/>
                         </div>

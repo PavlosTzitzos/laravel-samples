@@ -39,10 +39,20 @@ class ProducerController extends Controller
             'second_name' => 'nullable',
             'last_name' => 'required',
             'phone_number' => 'nullable|numeric',
-            'email' => 'nullable'
+            'email' => 'nullable',
+            'producer_image' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048',
         ]);
 
         $producer = Producer::create($data);
+
+        if($request->file('producer_image'))
+        {
+            $file = $request->file('producer_image');
+            $file_path = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('public/producerImages'), $file_path);
+            $producer['producer_image'] = $file_path;
+        }
+        $producer->save();
 
         return redirect(route('producer.index'))->with('success','Producer Created Successfully');
     }
@@ -63,10 +73,22 @@ class ProducerController extends Controller
             'second_name' => 'nullable',
             'last_name' => 'required',
             'phone_number' => 'nullable|numeric',
-            'email' => 'nullable'
+            'email' => 'nullable',
+            'producer_image' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048',
         ]);
 
         $producer->update($data);
+
+        // Step 3: Upload Image and Save Image Name
+        if($request->file('producer_image'))
+        {
+            $file = $request->file('producer_image');
+            $file_path = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('public/producerimage'), $file_path);
+            $producer['producer_image'] = $file_path;
+        }
+
+        $producer->save();
 
         return redirect(route('producer.index'))->with('success','Producer Updated Successfully');
     }

@@ -41,7 +41,7 @@
                             <th>{{$show->show_name}}</th>
                             <th>{{$show->show_description}}</th>
                             <th>
-                                <img src="{{ asset('public/showlogos/'.$show->show_logo) }}" style="height:120px; width:200px"/>
+                                <img src="{{ url('public/showlogos/'.$show->show_logo) }}" style="height: 100px; width: 150px;">
                             </th>
                             <th>
                             @foreach($show->producers as $producer)

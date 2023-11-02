@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('second_name')->nullable();
             $table->string('last_name');
             $table->string('description')->nullable();
-            $table->string('image')->nullable();
+            $table->string('producer_image')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('email')->nullable();
             $table->timestamps();

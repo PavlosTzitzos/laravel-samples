@@ -17,6 +17,8 @@ class Show extends Model
         'show_name',
         'show_description',
         'show_logo',
+        'created_by',
+        'updated_by'
     ];
 
     /**

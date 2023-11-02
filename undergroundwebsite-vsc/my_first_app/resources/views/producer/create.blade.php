@@ -9,7 +9,7 @@
                 <div>
                     @if($errors->any())
                     <ul>
-                        @foreach($erros->all() as $error)
+                        @foreach($errors->all() as $error)
                             <li>
                                 {{$error}}
                             </li>
@@ -17,7 +17,7 @@
                     </ul>
                     @endif
                 </div>
-                <form method="post" action="{{route('producer.store')}}">
+                <form method="post" action="{{route('producer.store')}}" enctype="multipart/form-data">
                     @csrf
                     @method('post')
 
@@ -46,9 +46,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="image" class="col-sm-2 col-form-label">Description </label>
+                        <label for="producer_image" class="col-sm-2 col-form-label">Producer image : </label>
                         <div class="col-sm-10">
-                            <input type="file" name="image" id="image" class="form-control-file"/>
+                            <input type="file" name="producer_image" id="producer_image" class="form-control-file"/>
                         </div>
                     </div>
                     <div class="form-group row">

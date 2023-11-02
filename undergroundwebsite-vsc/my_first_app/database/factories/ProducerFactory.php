@@ -21,7 +21,7 @@ class ProducerFactory extends Factory
             'second_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
             'description' => fake()->sentence(10),
-            'image' => 'null',
+            'producer_image' => 'null',
             'phone_number' => fake()->unique()->e164PhoneNumber(),
             'email' => fake()->safeEmail(),
         ];

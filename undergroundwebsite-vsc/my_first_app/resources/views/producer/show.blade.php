@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Details of Producer') }}</div>
-                <form>
+                <form enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
                         <label for="first_name" class="col-sm-2 col-form-label">First Name </label>
@@ -36,6 +36,12 @@
                         <label for="email" class="col-sm-2 col-form-label">Email </label>
                         <div class="col-sm-10">
                             <input type="email" name="email" id="email"placeholder="e.g. example@example.com" value="{{$producer->email}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group-file row">
+                        <label for="producer_image" class="col-sm-2 col-form-label"> Producer photo : </label>
+                        <div class="col-sm-10">
+                            <img src="{{ url('public/producerimage/'.$producer->producer_image) }}" style="height: 100px; width: 150px;">
                         </div>
                     </div>
                     <div class="d-flex justify-content-around">

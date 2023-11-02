@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Delete Producer') }}</div>
-                <form method="post" action="{{route('producer.destroy',['producer'=>$producer])}}">
+                <form method="post" action="{{route('producer.destroy',['producer'=>$producer])}}" enctype="multipart/form-data">
                     @csrf
                     @method('delete')
                     <div class="form-group row">
@@ -37,6 +37,12 @@
                         <label for="email" class="col-sm-2 col-form-label">Email </label>
                         <div class="col-sm-10">
                             <input type="email" name="email" id="email"placeholder="e.g. example@example.com" value="{{$producer->email}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group-file row">
+                        <label for="producer_image" class="col-sm-2 col-form-label"> Producer image : </label>
+                        <div class="col-sm-10">
+                            <img src="{{ url('public/producerimage/'.$producer->producer_image) }}" style="height: 100px; width: 150px;">
                         </div>
                     </div>
                     <div class="d-flex justify-content-around">
