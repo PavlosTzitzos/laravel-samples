@@ -65,6 +65,10 @@ D. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin) , Composer (used for php)
 
 - [Laravel Discord Logger](https://laravelpackages.net/marvinlabs/laravel-discord-logger)
 
+# Laravel Hours Helper :
+
+- [Repository](https://github.com/Label84/laravel-hours-helper)
+
 # About Authentication System :
 
 - [IEEE Best Practices for Authentication Framework / System](https://cybersecurity.ieee.org/blog/2016/06/02/design-best-practices-for-an-authentication-system/)
