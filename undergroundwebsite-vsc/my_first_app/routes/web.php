@@ -49,8 +49,8 @@ Auth::routes(['register' => false]);
 
 # After log in :
 Route::get('/home',[HomeController::class,'index'])->name('home.index');
-Route::get('/home/current_show/edit',[HomeController::class,'edit'])->name('home.edit');
-Route::put('/home/current_show/update',[HomeController::class,'update'])->name('home.update');
+Route::get('/home/current_show/{current_show}/edit',[HomeController::class,'edit'])->name('home.edit');
+Route::put('/home/current_show/{current_show}/update',[HomeController::class,'update'])->name('home.update');
 
 # HTTP GET methods
 
@@ -69,10 +69,12 @@ Route::get('/home/show/{show}/delete', [ShowController::class,'delete'])->name('
 Route::get('/home/program/create', [ProgramController::class,'create'])->name('program.create')->middleware('auth');
 Route::get('/home/program/{program}/edit', [ProgramController::class,'edit'])->name('program.edit')->middleware('auth');
 Route::get('/home/program/{program}/delete', [ProgramController::class,'delete'])->name('program.delete')->middleware('auth');
+Route::get('/home/program/clear', [ProgramController::class,'clear'])->name('program.clear')->middleware('auth');
 
 Route::get('/home/producer/create', [ProducerController::class,'create'])->name('producer.create')->middleware('auth');
 Route::get('/home/producer/{producer}/edit', [ProducerController::class,'edit'])->name('producer.edit')->middleware('auth');
 Route::get('/home/producer/{producer}/delete', [ProducerController::class,'delete'])->name('producer.delete')->middleware('auth');
+
 
 # HTTP POST methods :
 
@@ -94,4 +96,5 @@ Route::delete('/home/producer/{producer}/destroy', [ProducerController::class,'d
 
 # HTTP DELETE batch method for program :
 
-Route::delete('/home/program', [ProgramController::class,'clear'])->name('program.clear')->middleware('auth');
+Route::delete('/home/program/all/clear', [ProgramController::class,'empty'])->name('program.empty')->middleware('auth');
+

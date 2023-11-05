@@ -44,7 +44,7 @@
                     <div class="form-group row">
                         <label for="show_end_time" class="col-sm-2 col-form-label"> End Time </label>
                         <div class="col-sm-10">
-                            <input type="time" name="show_end_time" id="show_end_time" class="form-control" value="" disabled/>
+                            <input type="time" name="show_end_time" id="show_end_time" class="form-control" value="" readonly/>
                         </div>
                     </div>
                     <div class="form-group row">

@@ -50,8 +50,9 @@ class HomeController extends Controller
     public function update(CurrentShow $current_show , Request $request)
     {
         
-        //dd($request); // for debugging
-        
+        // dd($request); // for debugging
+        // dd($current_show); // for debugging
+
         $data = $request->validate([
             'show_id' => 'required',
         ]);
@@ -59,6 +60,7 @@ class HomeController extends Controller
         // current_show_calc();
 
         $current_show->update($data);
+
         return redirect(route('home.index'))->with('success','Current Show On Air !!');
     }
 

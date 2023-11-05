@@ -53,7 +53,7 @@
                             <select name="show_id" id="show_id" class="form-control">
                                 <option value="">--Please choose an option--</option>
                                 @foreach($shows as $show)
-                                    <option value="{{$show->show_id}}" @if($program->show->show_id==$show->show_id)selected @endif >{{$show->show_name}}</option>
+                                    <option value="{{$show->id}}" @if($program->show_id==$show->id)selected @endif >{{$show->show_name}}</option>
                                 @endforeach
                             </select>
                         </div>

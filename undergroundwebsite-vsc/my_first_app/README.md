@@ -69,6 +69,14 @@ D. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin) , Composer (used for php)
 
 - [Repository](https://github.com/Label84/laravel-hours-helper)
 
+# Delete All from a table with Eloquent :
+
+- [Article](https://devdojo.com/bobbyiliev/how-to-delete-all-entries-in-a-table-using-laravel-eloquent#:~:text=To%20do%20the%20same%20thing%20with%20Eloquent%2C%20we,Delete%20all%20entries%20using%20the%20delete%20%28%29%20method)
+
+# Disabled vs Readonly in HTML :
+
+- [StackOverflow Question](https://stackoverflow.com/questions/7730695/whats-the-difference-between-disabled-disabled-and-readonly-readonly-for-ht)
+
 # About Authentication System :
 
 - [IEEE Best Practices for Authentication Framework / System](https://cybersecurity.ieee.org/blog/2016/06/02/design-best-practices-for-an-authentication-system/)

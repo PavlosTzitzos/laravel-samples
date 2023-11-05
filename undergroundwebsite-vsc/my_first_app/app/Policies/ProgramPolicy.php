@@ -69,6 +69,18 @@ class ProgramPolicy
     }
 
     /**
+     * Determine whether the user can delete the model.
+     */
+    public function empty(User $user): bool
+    {
+        if(($user->role == 'editor') || ($user->role == 'admin'))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * Determine whether the user can restore the model.
      */
     public function restore(User $user, Program $program): bool

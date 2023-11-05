@@ -86,9 +86,15 @@ class ProgramController extends Controller
 
     public function clear()
     {
-        $this->authorize('can:delete',$program);
-        Program::all()->delete();
-
+        $this->authorize('empty',Program::class);
+        $programs = Program::all();
+        return view('program.clear',['programs' => $programs]);
+    }
+    
+    public function empty()
+    {
+        $this->authorize('empty',Program::class);
+        Program::truncate();
         return redirect(route('program.index'))->with('success','Program Cleared Successfully');
     }
 
