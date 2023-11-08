@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Details of a Program Slot') }}</div>
-                <form>
+                <form id="form" >
                     @csrf
                     <div class="form-group row">
                         <label for="program_weekday" class="col-sm-2 col-form-label">Week Day : </label>

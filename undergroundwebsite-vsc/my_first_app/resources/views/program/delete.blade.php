@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Delete a Program Slot') }}</div>
-                <form method="post" action="{{route('program.destroy',['program'=>$program])}}">
+                <form id="form" method="post" action="{{route('program.destroy',['program'=>$program])}}">
                     @csrf
                     @method('delete')
                     <div class="form-group row">

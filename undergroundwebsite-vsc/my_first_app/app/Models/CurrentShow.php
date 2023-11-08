@@ -21,6 +21,6 @@ class CurrentShow extends Model
      */
     public function show()
     {
-        return $this->hasOne(Show::class);
+        return $this->belongsTo(Show::class);
     }
 }

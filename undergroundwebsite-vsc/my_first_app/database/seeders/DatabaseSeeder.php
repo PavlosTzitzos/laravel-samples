@@ -94,28 +94,53 @@ class DatabaseSeeder extends Seeder
         ]);
         \App\Models\Program::factory()->create([
             'program_weekday' => fake()->dayOfWeek(),
-            'show_start_time' => $hours[2],
-            'show_end_time' => $hours[3],
+            'show_start_time' => $hours[1],
+            'show_end_time' => $hours[2],
             'show_id' => 2,
         ]);
         \App\Models\Program::factory()->create([
             'program_weekday' => fake()->dayOfWeek(),
-            'show_start_time' => $hours[4],
-            'show_end_time' => $hours[5],
+            'show_start_time' => $hours[3],
+            'show_end_time' => $hours[4],
             'show_id' => 3,
         ]);
         
         \App\Models\Program::factory()->create([
             'program_weekday' => fake()->dayOfWeek(),
-            'show_start_time' => $hours[6],
-            'show_end_time' => $hours[7],
+            'show_start_time' => $hours[5],
+            'show_end_time' => $hours[6],
             'show_id' => 4,
         ]);
         \App\Models\Program::factory()->create([
             'program_weekday' => fake()->dayOfWeek(),
-            'show_start_time' => $hours[8],
-            'show_end_time' => $hours[9],
+            'show_start_time' => $hours[7],
+            'show_end_time' => $hours[8],
             'show_id' => 5,
+        ]);
+        \App\Models\Program::factory()->create([
+            'program_weekday' => fake()->dayOfWeek(),
+            'show_start_time' => $hours[9],
+            'show_end_time' => $hours[10],
+            'show_id' => 3,
+        ]);
+        
+        \App\Models\Program::factory()->create([
+            'program_weekday' => fake()->dayOfWeek(),
+            'show_start_time' => $hours[11],
+            'show_end_time' => $hours[12],
+            'show_id' => 4,
+        ]);
+        \App\Models\Program::factory()->create([
+            'program_weekday' => fake()->dayOfWeek(),
+            'show_start_time' => $hours[0],
+            'show_end_time' => $hours[1],
+            'show_id' => 5,
+        ]);
+        \App\Models\Program::factory()->create([
+            'program_weekday' => date('l'),
+            'show_start_time' => $hours[11],
+            'show_end_time' => $hours[12],
+            'show_id' => 6,
         ]);
 
     }

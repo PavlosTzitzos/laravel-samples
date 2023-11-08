@@ -32,10 +32,10 @@ class Show extends Model
     /**
      * Relationship One Current Show to One Show
      */
-    // public function currentshow()
-    // {
-    //     return $this->hasOne(CurrentShow::class);
-    // }
+    public function currentshow()
+    {
+        return $this->hasOne(CurrentShow::class);
+    }
 
     /**
      * Relationship Many Shows to Many Producers

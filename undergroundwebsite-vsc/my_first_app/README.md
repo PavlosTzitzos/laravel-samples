@@ -8,7 +8,7 @@ Used :
 
 2. HTML , CSS , JS 
 
-3. XAMPP , MySQL , phpMyAdmin
+3. XAMPP , MySQL , phpMyAdmin , php
 
 # Some important notes :
 
@@ -30,11 +30,21 @@ Used :
 
 A. SQL basics / php basics and some OOP knowledge is required / HTML , CSS , JS basics
 
-B. MVC pattern
+B. MVC pattern 
 
-C. HTTP methods , CRUD methods , RESTfull Service : What are the available methods ? What their purpose ?
+C. Views (Look at Blade) , html , css , js
 
-D. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin) , Composer (used for php) , Node.JS (used for Vue.JS and npm is needed)
+D. Routes , HTTP methods , CRUD methods , RESTfull Service : What are the available methods ? What their purpose ?
+
+E. Controllers , FormRequests , Validation
+
+F. Migrations , Eloquent ORM , Models
+
+G. Task Scheduling in laravel
+
+H. Authentication (Look at starter kits) and Authorization (Look at Gates and Policies)
+
+I. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin , php) , Composer (used for php) , Node.JS (used for Vue.JS and npm is needed)
 
 # Sources to get started :
 
@@ -45,9 +55,24 @@ D. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin) , Composer (used for php)
 - [Chatango - The chat of the site](https://chatango.com/)
 - [How to implement CRUD in Laravel](https://www.youtube.com/watch?v=_LA9QsgJ0bw)
 - [Authentication , Vue.JS](https://www.youtube.com/watch?v=ImtZ5yENzgE)
+- [Laravel Authentication Starter Kits](https://laravel.com/docs/10.x/starter-kits)
 - [Authorization in laravel using GATES and POLICIES](https://www.youtube.com/watch?v=q-Fl_Qcfy5o)
 - [Image upload/view with validation](https://codesource.io/complete-laravel-8-image-upload-tutorial-with-example/)
+- [Cookies Consent](https://github.com/spatie/laravel-cookie-consent)
+- [Try-catch block to handle exceptions](https://www.tutsmake.com/laravel-try-catch/)
+- [Task Scheduling](https://www.positronx.io/laravel-cron-job-task-scheduling-tutorial-with-example/)
+- [XAMPP and PHP Error](https://studyopedia.com/errors-resolved/fix-php-warning-vcruntime140-dll-not-compatible/)
 - [Below docs]
+
+# Editing the Cookie dialog :
+
+To edit the message go to folder : lang\vendor\cookie-consent .
+
+To configure the cookie : config\cookie-consent.php
+
+From the instructions in the [repository](https://github.com/spatie/laravel-cookie-consent#installation) :
+
+The cookie domain is set by the 'domain' key in config/session.php, make sure you add a value in your .env for SESSION_DOMAIN. If you are using a domain with a port in the url such as 'localhost:3000', this package will not work until you do so.
 
 # Cloning this repository :
 
@@ -103,7 +128,7 @@ For the purposes of this application we MUST have an Authentication System with 
 
 2. CSRF - OK
 
-4. Session Cookie -???
+4. Session Cookie - OK
 
 5. Logging (in discord) - OK 
 
@@ -120,18 +145,6 @@ For the purposes of this application we MUST have an Authentication System with 
 Laravel has it's own authorization system called Gates and Principles.
 
 Principles are boolean values, their meaning is if the current user can have access to specific controller actions (methods).
-
-# Observation Pattern
-
-The observation pattern consits of listeners and events. A small explaination would be :
-
-<< If the model has a change then make an event. >>
-
-So the listeners await for events. (Await for notification)
-
-Events are triggred by changes in entities or states of a form / model.
-
-Examples are the subscriber / publishers pattern , cart management to notify admin and buyer etc...
 
 # Repository Pattern and API
 

@@ -17,7 +17,7 @@
                     </ul>
                     @endif
                 </div>
-                <form method="post" action="{{route('program.update',['program'=>$program])}}">
+                <form id="form" method="post" action="{{route('program.update',['program'=>$program])}}">
                     @csrf
                     @method('put')
                     <div class="form-group row">

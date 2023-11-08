@@ -17,7 +17,7 @@
                     </ul>
                     @endif
                 </div>
-                <form method="post" action="{{route('program.store')}}">
+                <form id="form" method="post" action="{{route('program.store')}}">
                     @csrf
                     @method('post')
                     <div class="form-group row">

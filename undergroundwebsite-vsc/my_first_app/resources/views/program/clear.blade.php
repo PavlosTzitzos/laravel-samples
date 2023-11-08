@@ -13,7 +13,7 @@
                     </div>
                     @endif
                 </div>
-                <form method="post" action="{{route('program.empty')}}">
+                <form id="form" method="post" action="{{route('program.empty')}}">
                     @csrf
                     @method('delete')
                     @if (auth()->check()) 

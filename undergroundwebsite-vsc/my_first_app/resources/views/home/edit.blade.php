@@ -17,7 +17,7 @@
                     </ul>
                     @endif
                 </div>
-                <form method="post" action="{{route('home.update',['current_show'=>$current_show])}}">
+                <form id="form" method="post" action="{{route('home.update',['current_show'=>$current_show])}}">
                     @csrf
                     @method('put')
                     <div class="form-group row">

@@ -11,90 +11,150 @@ class ProgramController extends Controller
 {
     public function index()
     {
-        $this->authorize('viewAny',Program::class);
-        $programs = Program::all();
+        try{
+            $this->authorize('viewAny',Program::class);
+            $programs = Program::all();
+        }
+        catch(exception $e){
+            // handle the exception
+            return back()->withError($exception->getMessage())->withInput();
+        }
         return view('program.index',['programs' => $programs]);
     }
 
     public function show(Program $program)
     {
-        $this->authorize('view',$program);
-        //dd($producer); // for debugging
+        try{
+            $this->authorize('view',$program);
+            //dd($producer); // for debugging
+        }
+        catch(exception $e){
+            // handle the exception
+            return back()->withError($exception->getMessage())->withInput();
+        }
         return view('program.show',['program'=>$program]);
     }
 
     public function create()
     {
-        $this->authorize('create',Program::class);
-        $shows = Show::all();
+        try{
+            $this->authorize('create',Program::class);
+            $shows = Show::all();
+        }
+        catch(exception $e){
+            // handle the exception
+            return back()->withError($exception->getMessage())->withInput();
+        }
         return view('program.create',['shows'=>$shows]);
     }
 
     public function store(Request $request)
     {
-        $this->authorize('create',Program::class);
-        //dd($request); // for debugging
-        $data = $request->validate([
-            'program_weekday' => 'required',
-            'show_start_time' => 'required',
-            'show_end_time' => 'required',
-            'show_id' => 'required'
-        ]);
+        try{
+            $this->authorize('create',Program::class);
+            //dd($request); // for debugging
+            $data = $request->validate([
+                'program_weekday' => 'required',
+                'show_start_time' => 'required',
+                'show_end_time' => 'required',
+                'show_id' => 'required'
+            ]);
 
-        $program = Program::create($data);
+            $program = Program::create($data);
+        }
+        catch(exception $e){
+            // handle the exception
+            return back()->withError($exception->getMessage())->withInput();
+        }
 
         return redirect(route('program.index'))->with('success','Program Created Successfully');
     }
 
     public function edit(Program $program)
     {
-        $this->authorize('update',$program);
-        //dd($program); // for debugging
-        $shows = Show::all();
+        try{
+            $this->authorize('update',$program);
+            //dd($program); // for debugging
+            $shows = Show::all();
+        }
+        catch(exception $e){
+            // handle the exception
+            return back()->withError($exception->getMessage())->withInput();
+        }
         return view('program.edit',['program'=>$program , 'shows' => $shows]);
     }
 
     public function update(Program $program, Request $request)
     {
-        $this->authorize('update',$program);
-        //dd($request); // for debugging
-        $data = $request->validate([
-            'program_weekday' => 'required',
-            'show_start_time' => 'required',
-            'show_end_time' => 'required',
-            'show_id' => 'required'
-        ]);
+        try{
+            $this->authorize('update',$program);
+            //dd($request); // for debugging
+            $data = $request->validate([
+                'program_weekday' => 'required',
+                'show_start_time' => 'required',
+                'show_end_time' => 'required',
+                'show_id' => 'required'
+            ]);
 
-        $program->update($data);
+            $program->update($data);
+        }
+        catch(exception $e){
+            // handle the exception
+            return back()->withError($exception->getMessage())->withInput();
+        }
         
         return redirect(route('program.index'))->with('success','Program Updated Successfully');
     }
 
     public function delete(Program $program)
     {
-        $this->authorize('delete',$program);
+        try{
+            $this->authorize('delete',$program);
+        }
+        catch(exception $e){
+            // handle the exception
+            return back()->withError($exception->getMessage())->withInput();
+        }
         return view('program.delete',['program'=>$program]);
     }
 
     public function destroy(Program $program)
     {
-        $this->authorize('delete',$program);
-        $program->delete();
+        try{
+            $this->authorize('delete',$program);
+            $program->delete();
+        }
+        catch(exception $e){
+            // handle the exception
+            return back()->withError($exception->getMessage())->withInput();
+        }
 
         return redirect(route('program.index'))->with('success','Pprogram Deleted Successfully');
     }
 
     public function clear()
     {
-        $this->authorize('empty',Program::class);
-        $programs = Program::all();
+        try{
+            $this->authorize('empty',Program::class);
+            $programs = Program::all();
+        }
+        catch(exception $e){
+            // handle the exception
+            return back()->withError($exception->getMessage())->withInput();
+        }
         return view('program.clear',['programs' => $programs]);
     }
     
     public function empty()
     {
-        $this->authorize('empty',Program::class);
-        Program::truncate();
+        try{
+            $this->authorize('empty',Program::class);
+            Program::truncate();
+        }
+        catch(exception $e){
+            // handle the exception
+            return back()->withError($exception->getMessage())->withInput();
+        }
         return redirect(route('program.index'))->with('success','Program Cleared Successfully');
     }
 
