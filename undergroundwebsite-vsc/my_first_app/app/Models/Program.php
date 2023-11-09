@@ -9,10 +9,14 @@ class Program extends Model
 {
     use HasFactory;
     
-    /* The table this model is connected to. */
+    /**
+     * The table this model is connected to.
+     */
     protected $table = 'programs';
 
-    /* Attributes the user can edit */
+    /**
+     * Attributes the user can edit
+     */
     protected $fillable = [
         'program_weekday',
         'show_start_time',

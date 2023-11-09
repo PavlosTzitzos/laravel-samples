@@ -2,7 +2,7 @@
 
 This is the repository of the website of our underground radio. 
 
-Used : 
+Used :
 
 1. Laravel Framework which is a PHP Framework
 
@@ -62,6 +62,9 @@ I. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin , php) , Composer (used fo
 - [Try-catch block to handle exceptions](https://www.tutsmake.com/laravel-try-catch/)
 - [Task Scheduling](https://www.positronx.io/laravel-cron-job-task-scheduling-tutorial-with-example/)
 - [XAMPP and PHP Error](https://studyopedia.com/errors-resolved/fix-php-warning-vcruntime140-dll-not-compatible/)
+- [Api in Laravel](https://www.youtube.com/watch?v=YGqCZjdgJJk)
+- [Making your laravel project public in your local network](https://stackoverflow.com/questions/54265275/how-to-share-a-laravel-project-on-the-local-network#:~:text=Its%20so%20much%20easy%20to%20do.%201.In%20windows,to%20share%20your%20project%20inside%20your%20same%20network.)
+- [Difference between HTTP PUT and PATCH methods](https://www.geeksforgeeks.org/difference-between-put-and-patch-request/)
 - [Below docs]
 
 # Editing the Cookie dialog :

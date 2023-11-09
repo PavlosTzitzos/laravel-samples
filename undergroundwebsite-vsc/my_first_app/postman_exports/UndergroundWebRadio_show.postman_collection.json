@@ -1,0 +1,512 @@
+{
+	"info": {
+		"_postman_id": "4f13591d-7b77-427b-b3c4-a0c620bfe7f9",
+		"name": "UndergroundWebRadio_show",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28568983"
+	},
+	"item": [
+		{
+			"name": "show_index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/shows",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"shows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show_show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/shows/2?includeProducers=true",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"shows",
+						"2"
+					],
+					"query": [
+						{
+							"key": "includeProducers",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "show_show_with_producers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/shows/2?includeProducers=true",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shows",
+								"2"
+							],
+							"query": [
+								{
+									"key": "includeProducers",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 19:00:52 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 19:00:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"showName\": \"qui placeat\",\n        \"showDescription\": \"Qui doloribus dolorem quia voluptatem pariatur quo qui qui rerum autem non debitis quo.\",\n        \"showLogo\": null,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"producers\": [\n            {\n                \"id\": 1,\n                \"firstName\": \"Abigail\",\n                \"secondName\": \"Roberta\",\n                \"lastName\": \"Heller\",\n                \"description\": \"Temporibus repellat quia magni aperiam consectetur delectus dolore velit natus possimus omnis.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+13206755007\",\n                \"email\": \"wschuster@example.com\"\n            },\n            {\n                \"id\": 2,\n                \"firstName\": \"Edwina\",\n                \"secondName\": \"Nikita\",\n                \"lastName\": \"Johns\",\n                \"description\": \"Explicabo enim omnis ut totam eum distinctio sit alias porro quam in.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+18566412721\",\n                \"email\": \"simeon.huels@example.org\"\n            },\n            {\n                \"id\": 3,\n                \"firstName\": \"Catharine\",\n                \"secondName\": \"Coralie\",\n                \"lastName\": \"Mosciski\",\n                \"description\": \"Harum mollitia voluptatem ullam aut quo debitis reprehenderit nisi impedit dolor nesciunt amet.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+15419714295\",\n                \"email\": \"berge.conner@example.org\"\n            },\n            {\n                \"id\": 4,\n                \"firstName\": \"Lurline\",\n                \"secondName\": \"Rosemarie\",\n                \"lastName\": \"Nitzsche\",\n                \"description\": \"Veniam quia aut repudiandae architecto quibusdam dolor illo commodi laborum sint eius quis placeat.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+12832440485\",\n                \"email\": \"hope.bashirian@example.org\"\n            },\n            {\n                \"id\": 5,\n                \"firstName\": \"Addie\",\n                \"secondName\": \"Lilly\",\n                \"lastName\": \"Bernier\",\n                \"description\": \"Adipisci accusamus nobis sed consequatur rerum cum est consequatur consequatur similique quibusdam accusamus.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+14587969844\",\n                \"email\": \"van52@example.org\"\n            },\n            {\n                \"id\": 6,\n                \"firstName\": \"Akeem\",\n                \"secondName\": \"Hyman\",\n                \"lastName\": \"Blick\",\n                \"description\": \"Quibusdam modi natus quo ut vel dolor nihil recusandae voluptatem aliquid alias.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+15418447255\",\n                \"email\": \"davon.casper@example.net\"\n            },\n            {\n                \"id\": 7,\n                \"firstName\": \"Oda\",\n                \"secondName\": \"Gregg\",\n                \"lastName\": \"Halvorson\",\n                \"description\": \"Nam est itaque exercitationem molestiae quia quia enim illum.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+19793026972\",\n                \"email\": \"von.hal@example.net\"\n            },\n            {\n                \"id\": 8,\n                \"firstName\": \"Mary\",\n                \"secondName\": \"Gabriel\",\n                \"lastName\": \"McKenzie\",\n                \"description\": \"Repellat pariatur nesciunt at necessitatibus quae ad dolore tempora nesciunt.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+13854790714\",\n                \"email\": \"alexie96@example.com\"\n            },\n            {\n                \"id\": 9,\n                \"firstName\": \"Claire\",\n                \"secondName\": \"Jarrod\",\n                \"lastName\": \"Reilly\",\n                \"description\": \"Quidem dolores neque amet nostrum sint est ipsum reiciendis harum ut.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+12312560165\",\n                \"email\": \"paucek.alia@example.net\"\n            },\n            {\n                \"id\": 10,\n                \"firstName\": \"Deron\",\n                \"secondName\": \"Adrianna\",\n                \"lastName\": \"Ferry\",\n                \"description\": \"Et tempora eos modi ut voluptas voluptate est nihil ut reiciendis.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+12187590556\",\n                \"email\": \"gwelch@example.net\"\n            },\n            {\n                \"id\": 11,\n                \"firstName\": \"Amiya\",\n                \"secondName\": \"Leanne\",\n                \"lastName\": \"Johnson\",\n                \"description\": \"Atque omnis aut esse quis dolores qui eum et eaque quos.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+15758931100\",\n                \"email\": \"christine.roob@example.org\"\n            },\n            {\n                \"id\": 12,\n                \"firstName\": \"Annalise\",\n                \"secondName\": \"Betty\",\n                \"lastName\": \"Rohan\",\n                \"description\": \"Consequuntur officiis esse iure voluptate et dolorem corrupti inventore aut et non.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+12405061321\",\n                \"email\": \"bosco.andres@example.org\"\n            },\n            {\n                \"id\": 13,\n                \"firstName\": \"Joaquin\",\n                \"secondName\": \"Delta\",\n                \"lastName\": \"Kovacek\",\n                \"description\": \"Culpa tempora ipsum est at alias sed molestiae.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+15514755218\",\n                \"email\": \"aschroeder@example.com\"\n            },\n            {\n                \"id\": 14,\n                \"firstName\": \"Gabriella\",\n                \"secondName\": \"Meaghan\",\n                \"lastName\": \"Feil\",\n                \"description\": \"Magnam velit placeat atque aut qui possimus non voluptatem omnis.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+13392474299\",\n                \"email\": \"stroman.albertha@example.net\"\n            },\n            {\n                \"id\": 15,\n                \"firstName\": \"Parker\",\n                \"secondName\": \"Autumn\",\n                \"lastName\": \"Moore\",\n                \"description\": \"Ut non est quaerat dolorem facere est velit sed ea officiis.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+18576888371\",\n                \"email\": \"orville87@example.com\"\n            },\n            {\n                \"id\": 16,\n                \"firstName\": \"Daija\",\n                \"secondName\": \"Arnaldo\",\n                \"lastName\": \"Jacobi\",\n                \"description\": \"Quos dolore minima error aut maxime repellendus ea nihil velit reiciendis.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+17549545222\",\n                \"email\": \"gaylord47@example.com\"\n            },\n            {\n                \"id\": 17,\n                \"firstName\": \"Jeanne\",\n                \"secondName\": \"Sandra\",\n                \"lastName\": \"Armstrong\",\n                \"description\": \"Dolore magni et aut qui aliquam incidunt velit aperiam.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+12792994675\",\n                \"email\": \"juston.frami@example.org\"\n            },\n            {\n                \"id\": 18,\n                \"firstName\": \"Amie\",\n                \"secondName\": \"Lisa\",\n                \"lastName\": \"Veum\",\n                \"description\": \"Hic totam porro in aliquam eum omnis quam expedita quae molestiae et ipsa voluptatem.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+12764655304\",\n                \"email\": \"eschimmel@example.com\"\n            },\n            {\n                \"id\": 19,\n                \"firstName\": \"Guiseppe\",\n                \"secondName\": \"Vinnie\",\n                \"lastName\": \"Halvorson\",\n                \"description\": \"Itaque sunt et totam deserunt vel blanditiis omnis nemo ea sit.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+18725494885\",\n                \"email\": \"smitham.andre@example.com\"\n            },\n            {\n                \"id\": 20,\n                \"firstName\": \"Rosario\",\n                \"secondName\": \"Natalia\",\n                \"lastName\": \"Nitzsche\",\n                \"description\": \"Ex saepe corrupti ratione dolorem quam expedita delectus dolor illo officiis magni.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+18027851048\",\n                \"email\": \"erik80@example.org\"\n            },\n            {\n                \"id\": 21,\n                \"firstName\": \"Baby\",\n                \"secondName\": \"Will\",\n                \"lastName\": \"Crooks\",\n                \"description\": \"Dolore cupiditate ducimus voluptas accusamus ut tempore cupiditate laudantium quia occaecati et sit.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+13865491544\",\n                \"email\": \"cfahey@example.org\"\n            },\n            {\n                \"id\": 22,\n                \"firstName\": \"Mustafa\",\n                \"secondName\": \"Elsa\",\n                \"lastName\": \"Effertz\",\n                \"description\": \"Sunt eaque veniam incidunt ullam rerum rerum itaque culpa et sit.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+16789789753\",\n                \"email\": \"anderson.yadira@example.net\"\n            },\n            {\n                \"id\": 23,\n                \"firstName\": \"Piper\",\n                \"secondName\": \"Richie\",\n                \"lastName\": \"Hamill\",\n                \"description\": \"Magni sint numquam excepturi molestiae atque esse hic cumque error fugiat sunt.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+18728667933\",\n                \"email\": \"eweimann@example.org\"\n            },\n            {\n                \"id\": 24,\n                \"firstName\": \"Madonna\",\n                \"secondName\": \"Jessika\",\n                \"lastName\": \"Cormier\",\n                \"description\": \"Non ut magni quo vero voluptatibus est atque omnis soluta non perferendis non nesciunt.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+12018984342\",\n                \"email\": \"abartoletti@example.org\"\n            },\n            {\n                \"id\": 25,\n                \"firstName\": \"Jeremie\",\n                \"secondName\": \"Jody\",\n                \"lastName\": \"Braun\",\n                \"description\": \"Qui et deleniti omnis magni voluptatem nisi in minima nemo molestiae aliquid aut ab.\",\n                \"producerImage\": \"null\",\n                \"createdBy\": null,\n                \"updatedBy\": null,\n                \"phoneNumber\": \"+12763658444\",\n                \"email\": \"bogisich.kacey@example.net\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "show_show",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/shows/2",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shows",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 19:01:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 19:01:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"showName\": \"qui placeat\",\n        \"showDescription\": \"Qui doloribus dolorem quia voluptatem pariatur quo qui qui rerum autem non debitis quo.\",\n        \"showLogo\": null,\n        \"createdBy\": null,\n        \"updatedBy\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "show_store",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/shows",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"shows"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "show_store",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showName\": \"Postman Show\",\r\n    \"showDescription\": \"Fuck you\",\r\n    \"showLogo\": null,\r\n    \"createdBy\": null,\r\n    \"updatedBy\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/shows",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shows"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 19:09:19 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 19:09:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 12,\n        \"showName\": \"Postman Show\",\n        \"showDescription\": \"Fuck you\",\n        \"showLogo\": null,\n        \"createdBy\": null,\n        \"updatedBy\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "show_update",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/shows/12",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"shows",
+						"12"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "show_update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showName\": \"Postman Show Put\",\r\n    \"showDescription\": \"Fuck you updated\",\r\n    \"showLogo\": null,\r\n    \"createdBy\": null,\r\n    \"updatedBy\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/shows/12",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shows",
+								"12"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 19:12:01 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 19:12:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "show_delete",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/shows/12",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"shows",
+						"12"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

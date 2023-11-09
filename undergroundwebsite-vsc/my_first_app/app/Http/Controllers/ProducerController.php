@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producer;
+use App\Http\Requests\ProducerFormRequest;
 
 class ProducerController extends Controller
 {
     /**
-     * Index View -> Index Function -> HTTP GET producers
+     * Returns all producers and it's details
+     * Auth / exceptions handle
+     * HTTP GET method
      */
     public function index()
     {
@@ -23,11 +26,15 @@ class ProducerController extends Controller
         return view('producer.index',['producers' => $producers]);
     }
 
+    /**
+     * Returns the producer , it's details
+     * Auth / exceptions handle
+     * HTTP GET method
+     */
     public function show(Producer $producer)
     {
         try{
             $this->authorize('view',$producer);
-            //dd($producer); // for debugging
         }
         catch(exception $e){
             // handle the exception
@@ -36,6 +43,11 @@ class ProducerController extends Controller
         return view('producer.show',['producer'=>$producer]);
     }
 
+    /**
+     * Create a new producer
+     * Auth / exceptions handle
+     * HTTP GET method
+     */
     public function create()
     {
         try{
@@ -48,19 +60,17 @@ class ProducerController extends Controller
         return view('producer.create');
     }
 
-    public function store(Request $request)
+    /**
+     * Create a new producer
+     * Auth / exceptions handle
+     * HTTP POST method
+     */
+    public function store(ProducerFormRequest $request)
     {
         try{
             $this->authorize('create',Producer::class);
-            //dd($request); // for debugging
-            $data = $request->validate([
-                'first_name' => 'required',
-                'second_name' => 'nullable',
-                'last_name' => 'required',
-                'phone_number' => 'nullable|numeric',
-                'email' => 'nullable',
-                'producer_image' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048',
-            ]);
+            
+            $data = $request->validated();
 
             $producer = Producer::create($data);
 
@@ -81,11 +91,15 @@ class ProducerController extends Controller
         return redirect(route('producer.index'))->with('success','Producer Created Successfully');
     }
 
+    /**
+     * Update a producer
+     * Auth / exceptions handle
+     * HTTP GET method
+     */
     public function edit(Producer $producer)
     {
         try{
             $this->authorize('update',$producer);
-            //dd($producer); // for debugging
         }
         catch(exception $e){
             // handle the exception
@@ -94,19 +108,17 @@ class ProducerController extends Controller
         return view('producer.edit',['producer'=>$producer]);
     }
 
-    public function update(Producer $producer, Request $request)
+    /**
+     * Update a producer
+     * Auth / exceptions handle
+     * HTTP POST method
+     */
+    public function update(Producer $producer, ProducerFormRequest $request)
     {
         try{
             $this->authorize('update',$producer);
-            //dd($request); // for debugging
-            $data = $request->validate([
-                'first_name' => 'required',
-                'second_name' => 'nullable',
-                'last_name' => 'required',
-                'phone_number' => 'nullable|numeric',
-                'email' => 'nullable',
-                'producer_image' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048',
-            ]);
+            
+            $data = $request->validated();
 
             $producer->update($data);
 
@@ -129,6 +141,11 @@ class ProducerController extends Controller
         return redirect(route('producer.index'))->with('success','Producer Updated Successfully');
     }
 
+    /**
+     * Delete a producer
+     * Auth / exceptions handle
+     * HTTP GET method
+     */
     public function delete(Producer $producer)
     {
         try{
@@ -141,6 +158,11 @@ class ProducerController extends Controller
         return view('producer.delete',['producer'=>$producer]);
     }
 
+    /**
+     * Delete a producer
+     * Auth / exceptions handle
+     * HTTP DELETE method
+     */
     public function destroy(Producer $producer)
     {
         try{

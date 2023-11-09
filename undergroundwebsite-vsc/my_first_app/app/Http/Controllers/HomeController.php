@@ -22,7 +22,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the application dashboard. After log in.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -45,6 +45,11 @@ class HomeController extends Controller
         }
         return view('home.index',['current_show' => $current_show]);
     }
+
+    /**
+     * Edit the current show that is On Air.
+     * At HTTP GET method
+     */
     public function edit(CurrentShow $current_show)
     {
         try{
@@ -57,6 +62,11 @@ class HomeController extends Controller
         }
         return view('home.edit',['current_show' => $current_show,'shows' => $shows]);
     }
+
+    /**
+     * Save the selected current show 
+     * At HTTP POST method
+     */
     public function update(CurrentShow $current_show , Request $request)
     {
         try{

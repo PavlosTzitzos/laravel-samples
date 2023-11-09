@@ -9,10 +9,14 @@ class Show extends Model
 {
     use HasFactory;
 
-    /* The table this model is connected to. */
+    /**
+     * The table this model is connected to.
+     */
     protected $table = 'shows';
 
-    /* Attributes the user can edit */
+    /**
+     * Attributes the user can edit
+     */
     protected $fillable = [
         'show_name',
         'show_description',

@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Show;
 use App\Models\Producer;
+use App\Http\Requests\ShowFormRequest;
 
 class ShowController extends Controller
 {
+    /**
+     * Returns all shows , it's details and it's producers
+     * Auth / exceptions handle
+     * HTTP GET method
+     */
     public function index()
     {
         try{
@@ -21,6 +27,11 @@ class ShowController extends Controller
         return view('show.index',['shows' => $shows]);
     }
 
+    /**
+     * Returns the show and it's details
+     * Auth / exceptions handle
+     * HTTP GET method
+     */
     public function show(Show $show)
     {
         try{
@@ -34,6 +45,11 @@ class ShowController extends Controller
         return view('show.show',['show'=>$show]);
     }
 
+    /**
+     * Create a new show
+     * Auth / exceptions handle
+     * HTTP GET method
+     */
     public function create()
     {
         try{
@@ -47,21 +63,18 @@ class ShowController extends Controller
         return view('show.create',['producers' => $producers]);
     }
 
-    public function store(Request $request)
+    /**
+     * Create a new producer
+     * Auth / exceptions handle
+     * HTTP POST method
+     */
+    public function store(ShowFormRequest $request)
     {
         try{
             $this->authorize('create',Show::class);
-            // dd($request); // for debugging
             
             //Step 1 : validations
-            $data = $request->validate([
-                'show_name' => 'required',
-                'show_description' => 'nullable',
-                //'show_logo' => 'nullable|mimes:jpeg,jpg,png,gif'
-                'show_logo' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048',
-                'producer_ids' => 'required|array|min:1',
-                'producer_ids.*' => 'required|distinct|max:4',
-            ]);
+            $data = $request->validated();
 
             // Step 2: Save Data like name , time , description
             $show = Show::create($data);
@@ -83,7 +96,7 @@ class ShowController extends Controller
             * The reason for this is that laravel needs the show_id to know what id to insert in the pivot table .
             */
             $producer_ids = $request->input('producer_ids');
-            //dd($producer_ids); //used for debugging
+
             $show->producers()->attach($producer_ids);
         }
         catch(exception $e){
@@ -94,6 +107,11 @@ class ShowController extends Controller
         return redirect(route('show.index'))->with('success','Show Created Successfully');
     }
 
+    /**
+     * Update a show details
+     * Auth / exceptions handle
+     * HTTP GET method
+     */
     public function edit(Show $show)
     {
         try{
@@ -111,21 +129,18 @@ class ShowController extends Controller
         return view('show.edit',['show'=>$show,'old_producers'=>$old_producers,'all_producers'=>$all_producers]);
     }
 
-    public function update(Show $show, Request $request)
+    /**
+     * Update a show
+     * Auth / exceptions handle
+     * HTTP POST method
+     */
+    public function update(Show $show, ShowFormRequest $request)
     {
         try{
             $this->authorize('update',$show);
-            //dd($request); // for debugging
             
             //Step 1 : validations
-            $data = $request->validate([
-                'show_name' => 'required',
-                'show_description' => 'nullable',
-                //'show_logo' => 'nullable|mimes:jpeg,jpg,png,gif'
-                'show_logo' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048',
-                'producer_ids' => 'required|array|min:1',
-                'producer_ids.*' => 'required|distinct|max:4',
-            ]);
+            $data = $request->validated();
 
             $show->update($data);
 
@@ -152,6 +167,11 @@ class ShowController extends Controller
         return redirect(route('show.index'))->with('success','Show Updated Successfully');
     }
 
+    /**
+     * Delete a show
+     * Auth / exceptions handle
+     * HTTP GET method
+     */
     public function delete(Show $show)
     {
         try{
@@ -164,6 +184,11 @@ class ShowController extends Controller
         return view('show.delete',['show'=>$show]);
     }
 
+    /**
+     * Delete a show
+     * Auth / exceptions handle
+     * HTTP DELETE method
+     */
     public function destroy(Show $show)
     {
         try{

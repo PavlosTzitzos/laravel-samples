@@ -11,7 +11,9 @@ use App\Models\NextShow;
 
 class WelcomeController extends Controller
 {
-    //
+    /**
+     * The main page
+     */
     public function index()
     {
         try{
@@ -31,6 +33,10 @@ class WelcomeController extends Controller
         return view('welcome',['current_show' => $current_show_details,'next_show' => $next_show_details]);
     }
 
+    /**
+     * Fetches all shows
+     * HTTP GET method
+     */
     public function show()
     {
         try{
@@ -42,6 +48,11 @@ class WelcomeController extends Controller
         }
         return view('show',['shows' => $shows]);
     }
+
+    /**
+     * Fetches the program of this week
+     * HTTP GET
+     */
     public function program()
     {
         try{
@@ -53,6 +64,11 @@ class WelcomeController extends Controller
         }
         return view('program',['programs' => $programs]);
     }
+
+    /**
+     * Fetches all producers
+     * HTTP GET
+     */
     public function producer()
     {
         try{

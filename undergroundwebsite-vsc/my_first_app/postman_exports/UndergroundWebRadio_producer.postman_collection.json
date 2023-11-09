@@ -1,0 +1,795 @@
+{
+	"info": {
+		"_postman_id": "b32757b8-53d3-47ea-ab7f-10c02020d3fe",
+		"name": "UndergroundWebRadio_producer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28568983"
+	},
+	"item": [
+		{
+			"name": "producer_index",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/producers",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"producers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "producer_show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/producers/2",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"producers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "producer_store",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Postman\",\r\n    \"secondName\": \"postman\",\r\n    \"lastName\": \"PPostman\",\r\n    \"description\": \"optional\",\r\n    \"producerImage\": \"\",\r\n    \"createdBy\": \"null\",\r\n    \"updatedBy\": \"null\",\r\n    \"phoneNumber\": \"+239937016556\",\r\n    \"email\": \"postman@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/producers",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"producers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "producer_store",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Postman\",\r\n    \"secondName\": \"postman\",\r\n    \"lastName\": \"PPostman\",\r\n    \"description\": \"optional\",\r\n    \"producerImage\": \"\",\r\n    \"createdBy\": \"null\",\r\n    \"updatedBy\": \"null\",\r\n    \"phoneNumber\": \"+239937016556\",\r\n    \"email\": \"postman@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/producers",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"producers"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 17:32:35 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 17:32:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 27,\n        \"firstName\": \"Postman\",\n        \"secondName\": null,\n        \"lastName\": \"PPostman\",\n        \"description\": \"optional\",\n        \"producerImage\": null,\n        \"createdBy\": null,\n        \"updatedBy\": null,\n        \"phoneNumber\": null,\n        \"email\": \"postman@example.com\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "producer_update",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Postman_put\",\r\n    \"secondName\": null,\r\n    \"lastName\": \"PUT\",\r\n    \"description\": \"changed with put\",\r\n    \"producerImage\": null,\r\n    \"createdBy\": null,\r\n    \"updatedBy\": null,\r\n    \"phoneNumber\": null,\r\n    \"email\": \"postman_put@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/producers/27",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"producers",
+						"27"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "producer_update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Postman_put\",\r\n    \"secondName\": null,\r\n    \"lastName\": \"PUT\",\r\n    \"description\": \"changed with put\",\r\n    \"producerImage\": null,\r\n    \"createdBy\": null,\r\n    \"updatedBy\": null,\r\n    \"phoneNumber\": null,\r\n    \"email\": \"postman_put@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/producers/27",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"producers",
+								"27"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 17:44:50 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 17:44:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "producer_update_2",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Postman_put\",\r\n    \"secondName\": null,\r\n    \"lastName\": \"PUT\",\r\n    \"description\": \"changed with put\",\r\n    \"producerImage\": null,\r\n    \"createdBy\": null,\r\n    \"updatedBy\": null,\r\n    \"phoneNumber\": \"6947056456\",\r\n    \"email\": \"postman_put@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/producers/27",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"producers",
+								"27"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 17:51:24 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 17:51:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "producer_update_3",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Postman_put\",\r\n    \"secondName\": null,\r\n    \"lastName\": \"PUT\",\r\n    \"description\": \"changed with put\",\r\n    \"producerImage\": null,\r\n    \"createdBy\": null,\r\n    \"updatedBy\": null,\r\n    \"phoneNumber\": \"+306947056456\",\r\n    \"email\": \"postman_put@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/producers/27",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"producers",
+								"27"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:34:57 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:34:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "producer_update_partial",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Postman name changed\",\r\n    \"secondName\": \"PATCH\",\r\n    \"lastName\": \"PPostman\",\r\n    \"description\": \"optional description changed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/producers/27",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"producers",
+						"27"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "producer_update_partial",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Postman name changed\",\r\n    \"secondName\": \"PATCH\",\r\n    \"lastName\": \"PPostman\",\r\n    \"description\": \"optional description changed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/producers/27",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"producers",
+								"27"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 17:49:24 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 17:49:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "producer_update_partial_2",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Postman name changed\",\r\n    \"secondName\": \"PATCH\",\r\n    \"lastName\": \"PPostman\",\r\n    \"description\": \"optional description changed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/producers/27",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"producers",
+								"27"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:35:06 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:35:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "56"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "producer_delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/producers/5",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"producers",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "producer_delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/producers/27",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"producers",
+								"27"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:41:00 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:41:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

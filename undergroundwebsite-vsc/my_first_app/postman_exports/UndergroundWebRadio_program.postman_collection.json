@@ -1,0 +1,464 @@
+{
+	"info": {
+		"_postman_id": "1c8826dc-53dd-46a9-baed-9dd2ea5c909c",
+		"name": "UndergroundWebRadio_program",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28568983"
+	},
+	"item": [
+		{
+			"name": "program_index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/programs",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"programs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "program_show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/programs/2",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"programs",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "program_store",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/programs",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"programs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "program_store",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dayOfTheWeek\": \"Tuesday\",\r\n    \"showStartTime\": \"02:00\",\r\n    \"showEndTime\": \"04:00\",\r\n    \"showId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/programs",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"programs"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:47:46 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:47:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 10,\n        \"dayOfTheWeek\": \"Tuesday\",\n        \"showStartTime\": \"02:00\",\n        \"showEndTime\": \"04:00\",\n        \"showId\": 4\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "program_update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/programs/3",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"programs",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "program_update_partial",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/programs/10",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"programs",
+						"10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "program_update_partial",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dayOfTheWeek\": \"Monday\",\r\n    \"showId\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/programs/10",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"programs",
+								"10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:53:58 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:53:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "program_delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/programs/5",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"programs",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "program_delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://192.168.2.3:8000/api/v1/programs/10",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"2",
+								"3"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"programs",
+								"10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Host",
+							"value": "192.168.2.3:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:54:49 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Nov 2023 18:54:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.2.3:8000/api/v1/programs",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"3"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"programs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
