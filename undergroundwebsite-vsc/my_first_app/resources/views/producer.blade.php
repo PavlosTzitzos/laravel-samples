@@ -13,17 +13,17 @@
                     </div>
                     @endif
                 </div>
-                
+
                 <div>
                     <table class="table">
                         <tr>
-                            <th>First Name</th>
-                            <th>Second Name</th>
-                            <th>Last Name</th>
-                            <th>Description</th>
-                            <th>Photo</th>
+                            <th>{{ __('First Name') }}</th>
+                            <th>{{ __('Second Name') }}</th>
+                            <th>{{ __('Last Name') }}</th>
+                            <th>{{ __('Description') }}</th>
+                            <th>{{ __('Photo') }}</th>
                         </tr>
-                        
+
                         @foreach($producers as $producer)
                         <tr>
                             <th>{{$producer->first_name}}</th>

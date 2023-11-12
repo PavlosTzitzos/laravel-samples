@@ -7,18 +7,47 @@ use App\Http\Controllers\Controller;
 use App\Models\Show;
 use App\Models\Producer;
 use App\Http\Requests\V1\ShowFormRequest;
-use App\Http\Resources\V1\ShowResource;
-use App\Http\Resources\V1\ShowCollection;
+use App\Traits\ResponseTrait;
+use App\Repositories\ShowRepository;
 
 class ShowController extends Controller
 {
+    use ResponseTrait;
+
     /**
-     * Returns all shows and it's details
+     * Dependency Injection - START
+     */
+    public $showRepository;
+
+    public function __construct(ShowRepository $showRepository) {
+        $this->showRepository = $showRepository;
+    }
+
+    /**
+     * @OA\Get(
+     *     path="/api/v1/shows",
+     *     tags={"Shows"},
+     *     summary="Gets all shows",
+     *     description="Gets all shows and their details from db.",
+     *     operationId="indexShow",
+     *     @OA\Response(
+     *         response=200,
+     *         description="successful operation",
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Invalid status value"
+     *     )
+     * )
      */
     public function index()
     {
-        $this->authorize('viewAny',Program::class);
-        return new ShowCollection(Show::paginate());
+        // $this->authorize('viewAny',Program::class);
+        try {
+            return $this->responseSuccess($this->showRepository->getAll(),'Shows fetched successfully.');
+        } catch (Exception $e) {
+            return $this->responseError([],$e->getMessage());
+        }
     }
 
     /**
@@ -31,12 +60,21 @@ class ShowController extends Controller
     public function show(Show $show)
     {
         $this->authorize('view',$show);
-        $includeProducers = request()->query('includeProducers');
-        if($includeProducers)
-        {
-            return new ShowResource($show->loadMissing('producers'));
+        try{
+            $includeProducers = request()->query('includeProducers');
+            if($includeProducers)
+            {
+                return new ShowResource($show->loadMissing('producers'));
+            }
+            return new ShowResource($show);
+        } catch (exception $e){
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage(),
+                'data' => null,
+                'errors' => []
+            ]);
         }
-        return new ShowResource($show);
     }
 
     /**
@@ -44,7 +82,16 @@ class ShowController extends Controller
      */
     public function store(ShowFormRequest $request)
     {
-        return new ShowResource(Show::create($request->all()));
+        try{
+            return new ShowResource(Show::create($request->all()));
+        } catch (exception $e){
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage(),
+                'data' => null,
+                'errors' => []
+            ]);
+        }
     }
 
     /**
@@ -52,7 +99,16 @@ class ShowController extends Controller
      */
     public function update(Show $show, ShowFormRequest $request)
     {
-        $show->update($request->all());
+        try{
+            $show->update($request->all());
+        } catch (exception $e){
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage(),
+                'data' => null,
+                'errors' => []
+            ]);
+        }
     }
 
     /**
@@ -61,6 +117,15 @@ class ShowController extends Controller
     public function destroy(Show $show)
     {
         $this->authorize('delete',$show);
-        $show->delete();
+        try{
+            $show->delete();
+        } catch (exception $e){
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage(),
+                'data' => null,
+                'errors' => []
+            ]);
+        }
     }
 }

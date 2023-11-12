@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('About Us') }}</div>
+                <div class="card-header">{{ __('About') }}</div>
 
                 <div class="card-body">
-                    Add some description here... 
+                    Add some description here...
                 </div>
             </div>
         </div>

@@ -21,10 +21,10 @@
                     @csrf
                     @method('put')
                     <div class="form-group row">
-                        <label for="show_id" class="col-sm-2 col-form-label">Show Name : </label>
+                        <label for="show_id" class="col-sm-2 col-form-label">{{ __('Show Name') }} </label>
                         <div class="col-sm-10">
                             <select name="show_id" id="show_id" class="form-control">
-                                <option value="">--Please choose an option--</option>
+                                <option value="">--{{ __('Please choose an option') }}--</option>
                                 @foreach($shows as $show)
                                     <option value="{{$show->id}}" @if($current_show->show_id==$show->id)selected @endif >{{$show->show_name}}</option>
                                 @endforeach
@@ -32,8 +32,8 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-around">
-                        <div class="p-2"><button id="submit" name="submit" class="btn btn-primary">Save Slot</button></div>
-                        <div class="p-2"><a href="{{route('home.index')}}" id="cancel" name="cancel" class="btn btn-danger">Cancel</a></div>
+                        <div class="p-2"><button id="submit" name="submit" class="btn btn-primary">{{ __('Save Slot') }}</button></div>
+                        <div class="p-2"><a href="{{route('home.index')}}" id="cancel" name="cancel" class="btn btn-danger">{{ __('Cancel') }}</a></div>
                     </div>
                 </form>
             </div>

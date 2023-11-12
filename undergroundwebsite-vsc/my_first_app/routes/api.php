@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group([
     'prefix'=>'v1',
     'namespace'=>'App\Http\Controllers\Api\V1',
-    'middleware' => 'auth:sanctum',// locked
+    //'middleware' => 'auth:sanctum',// locked
 ],function(){
     Route::apiResource('producers', ProducerController::class);
     Route::apiResource('shows', ShowController::class); // pivot table need to be updated with api

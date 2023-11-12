@@ -17,23 +17,23 @@
                     {{ __('You are logged in!') }}
 
                     @can('isAdmin')
-                        <h4 class="text-center">This is Admin</h4>
-                    @endcan
-                    
-                    @can('isEditor')
-                        <h4 class="text-center">This is Editor</h4>
-                    @endcan
-                    
-                    @can('isUser')
-                        <h4 class="text-center">This is User</h4>
+                        <h4 class="text-center">{{ __('This is Admin') }}</h4>
                     @endcan
 
-                    <h3>Current Show</h3>
+                    @can('isEditor')
+                        <h4 class="text-center">{{ __('This is Editor') }}</h4>
+                    @endcan
+
+                    @can('isUser')
+                        <h4 class="text-center">{{ __('This is User') }}</h4>
+                    @endcan
+
+                    <h3>{{ __('Current Show') }}</h3>
                     <div class="d-flex justify-content-around">
                         {{$current_show->show->show_name}}
                     </div>
                     <div class="d-flex justify-content-around">
-                        <div class="p-2"><a href="{{route('home.edit',['current_show'=> $current_show])}}"id="current-show-edit" name="current-show-edit" class="btn btn-primary">Edit Current Show</a></div>
+                        <div class="p-2"><a href="{{route('home.edit',['current_show'=> $current_show])}}"id="current-show-edit" name="current-show-edit" class="btn btn-primary">{{ __('Edit Current Show') }}</a></div>
                     </div>
 
                 </div>

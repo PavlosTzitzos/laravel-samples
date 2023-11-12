@@ -13,7 +13,7 @@
                             <img src="../img/pcs_logo.png" />
                         </div>
                         <div class="bottom-text">
-                            <h2>Now On-Air</h2>
+                            <h2>{{ __('Now On-Air') }}</h2>
                             <h4>{{$current_show->show_name}}</h4>
                             <div class="producers-broadcast">
                                 @foreach($current_show->producers as $producer)
@@ -30,7 +30,7 @@
                             <img src="../img/pcs_logo.png" />
                         </div>
                         <div class="bottom-text">
-                            <h2>Coming Next</h2>
+                            <h2>{{ __('Coming Next') }}</h2>
                             <h4>{{$next_show->show_name}}</h4>
                             <div class="producers-broadcast">
                                 @foreach($next_show->producers as $producer)

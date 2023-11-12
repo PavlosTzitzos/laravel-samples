@@ -149,10 +149,33 @@ Laravel has it's own authorization system called Gates and Principles.
 
 Principles are boolean values, their meaning is if the current user can have access to specific controller actions (methods).
 
-# Repository Pattern and API
+# API
 
-Before implementing your API you need to implement the repository pattern in your application.
+- [Repository Pattern , Service for Business Logic , Laravel Traits](https://stackoverflow.com/questions/60029955/when-to-use-repository-vs-service-vs-trait-in-laravel)
 
+- [Types of APIs](https://blog.axway.com/learning-center/apis/basics/different-types-apis)
+
+- [Adding Swagger](https://blog.quickadminpanel.com/laravel-api-documentation-with-openapiswagger/)
+
+# REST API vs SOAP API
+
+- [Article](https://blog.hubspot.com/website/rest-vs-soap)
+
+- [Video](https://www.bing.com/videos/riverview/relatedvideo?&q=laravel+SOAP+api+tutorial&&mid=BA54CFFAEE1B81EAB1C9BA54CFFAEE1B81EAB1C9&&FORM=VRDGAR)
+
+# And then there is this guy
+
+- [Profile](https://www.youtube.com/@Maniruzzaman/featured)
+
+- [Laravel REST API](https://www.youtube.com/playlist?list=PL_ftyCsXJUO6O7L5j9Ps295a2C3dSfuvj)
+
+- [Laravel Real-Time Chat](https://www.youtube.com/playlist?list=PL_ftyCsXJUO5n_vN0f2UFwt3UYRnrNOid)
+
+- [Laravel Unit Testing](https://www.youtube.com/playlist?list=PL_ftyCsXJUO7_rOuWYJuqphLZQdOOGYU1)
+
+- [Laravel + React](https://www.youtube.com/playlist?list=PL_ftyCsXJUO79X799gETULG6YdsFfzJeA)
+
+Sir you are awsome !!!
 
 # LARAVEL PHP FRAMEWORK
 

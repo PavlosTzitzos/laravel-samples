@@ -52,44 +52,44 @@
                     <ul class="navbar-nav me-auto">
                         @if (auth()->check())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/')}}">Main</a>
+                            <a class="nav-link" href="{{url('/')}}">{{ __('Main') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('producer.index')}}">Producers</a>
+                            <a class="nav-link" href="{{route('producer.index')}}">{{ __('Producers') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('show.index')}}">Shows</a>
+                            <a class="nav-link" href="{{route('show.index')}}">{{ __('Shows') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('program.index')}}">Program of the week</a>
+                            <a class="nav-link" href="{{route('program.index')}}">{{ __('Program of the week') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('home.index')}}">Now On Air</a>
+                            <a class="nav-link" href="{{route('home.index')}}">{{ __('Now On Air') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('gefyra')}}">Gefyra</a>
+                            <a class="nav-link" href="{{url('gefyra')}}">{{ __('Gefyra') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('about')}}">About Us</a>
+                            <a class="nav-link" href="{{url('about')}}">{{ __('About') }}</a>
                         </li>
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/')}}">Main</a>
+                            <a class="nav-link" href="{{url('/')}}">{{ __('Main') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('producer')}}">Producers</a>
+                            <a class="nav-link" href="{{url('producer')}}">{{ __('Producers') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('show')}}">Shows</a>
+                            <a class="nav-link" href="{{url('show')}}">{{ __('Shows') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('program')}}">Program of the week</a>
+                            <a class="nav-link" href="{{url('program')}}">{{ __('Program of the week') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('gefyra')}}">Gefyra</a>
+                            <a class="nav-link" href="{{url('gefyra')}}">{{ __('Gefyra') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('about')}}">About Us</a>
+                            <a class="nav-link" href="{{url('about')}}">{{ __('About') }}</a>
                         </li>
                         @endif
                     </ul>
@@ -144,10 +144,10 @@
         <footer class="footer">
             <div class="footdiv">
                 <div class="contact-details">
-                    <h4>Επικοινωνία</h4>
+                    <h4>{{ __('Contact Us') }}</h4>
                     <ul>
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Πανεπιστημιούπολη, Ξάνθη, 671 00</li>
-                        <li><i class="fa fa-envelope" aria-hidden="true"></i> underground1003@gmail.com</li>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> {{ __('University of Xanthi , 671 00') }}</li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i> {{ __('underground1003@gmail.com') }}</li>
                     </ul>
                 </div>
                 <div class="social-menu">
@@ -158,9 +158,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="copyrights"><p>Copyright © 2023 Underground Web Radio</p></div>
+            <div class="copyrights"><p>{{ __('Copyright') }} &copy 2023 - {{ date('Y') }} {{ __('Underground Web Radio') }}</p></div>
         </footer>
-        
+
         <!--Player division -->
         <div id="aWrap">
             <!-- (B) PLAY/PAUSE BUTTON -->
@@ -189,7 +189,7 @@
 
         <!-- Loading division for form submition -->
         <div id="loader" class="hidden" style="display: none">
-            Loading ...
+            {{ __('Loading ...') }}
         </div>
     </div>
 </body>

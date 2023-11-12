@@ -13,28 +13,28 @@
                     </div>
                     @endif
                 </div>
-                @if (auth()->check()) 
+                @if (auth()->check())
                     @can('isAdmin')
                         <div class="d-flex justify-content-around">
-                            <a href="{{route('show.create')}}" id="show-create" name="show-create" class="btn btn-primary">Create New Show</a>
+                            <a href="{{route('show.create')}}" id="show-create" name="show-create" class="btn btn-primary">{{ __('Create New Show') }}</a>
                         </div>
                     @endcan
                 @endif
                 <div>
                     <table class="table">
                         <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Logo</th>
-                            <th>Producers</th>
-                            <th>Time</th>
-                            @if (auth()->check()) 
+                            <th>{{ __('Name') }}</th>
+                            <th>{{ __('Description') }}</th>
+                            <th>{{ __('Logo') }}</th>
+                            <th>{{ __('Producers') }}</th>
+                            <th>{{ __('Time') }}</th>
+                            @if (auth()->check())
                                 @can('isAdmin')
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>{{ __('Edit') }}</th>
+                                    <th>{{ __('Delete') }}</th>
                                 @endcan
                             @endif
-                            <th>Details</th>
+                            <th>{{ __('Details') }}</th>
                         </tr>
                         @foreach($shows as $show)
                         <tr>
@@ -48,21 +48,21 @@
                                 {{$producer->first_name}} {{$producer->second_name?$producer->second_name:''}} {{$producer->last_name}}
                                 <br>
                             @endforeach
-                            
+
                             </th>
                             <th>{{$show->program?$show->program->program_weekday:''}}</th>
-                            @if (auth()->check()) 
+                            @if (auth()->check())
                                 @can('isAdmin')
                                     <th>
-                                        <a href="{{route('show.edit',['show'=> $show])}}">Edit</a>
+                                        <a href="{{route('show.edit',['show'=> $show])}}">{{ __('Edit') }}</a>
                                     </th>
                                     <th>
-                                        <a href="{{route('show.delete',['show'=> $show])}}">Delete</a>
+                                        <a href="{{route('show.delete',['show'=> $show])}}">{{ __('Delete') }}</a>
                                     </th>
                                 @endcan
                             @endif
                             <th>
-                                <a href="{{route('show.show',['show'=> $show])}}">Details</a>
+                                <a href="{{route('show.show',['show'=> $show])}}">{{ __('Details') }}</a>
                             </th>
                         </tr>
                         @endforeach

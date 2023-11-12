@@ -12,9 +12,9 @@ class ProducerFormRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        $user = $this->user();
-
-        return $user != null && ( $user->tokenCan('create') || $user->tokenCan('update') );
+        // $user = $this->user();
+        // return $user != null && ( $user->tokenCan('create') || $user->tokenCan('update') );
+        return true;
     }
 
     /**
