@@ -65,6 +65,7 @@ I. Tools : VSCode , XAMPP (Apache Server , phpMyAdmin , php) , Composer (used fo
 - [Api in Laravel](https://www.youtube.com/watch?v=YGqCZjdgJJk)
 - [Making your laravel project public in your local network](https://stackoverflow.com/questions/54265275/how-to-share-a-laravel-project-on-the-local-network#:~:text=Its%20so%20much%20easy%20to%20do.%201.In%20windows,to%20share%20your%20project%20inside%20your%20same%20network.)
 - [Difference between HTTP PUT and PATCH methods](https://www.geeksforgeeks.org/difference-between-put-and-patch-request/)
+- [JWT Authentication - Laravel Passport](https://www.youtube.com/watch?v=TxcsU3CZQ10&list=PL_ftyCsXJUO6O7L5j9Ps295a2C3dSfuvj&index=5)
 - [Below docs]
 
 # Editing the Cookie dialog :
@@ -162,6 +163,10 @@ Principles are boolean values, their meaning is if the current user can have acc
 - [Article](https://blog.hubspot.com/website/rest-vs-soap)
 
 - [Video](https://www.bing.com/videos/riverview/relatedvideo?&q=laravel+SOAP+api+tutorial&&mid=BA54CFFAEE1B81EAB1C9BA54CFFAEE1B81EAB1C9&&FORM=VRDGAR)
+
+# Authorization in Laravel
+
+- [JWT Authorization - Laravel Passport](https://www.youtube.com/watch?v=TxcsU3CZQ10&list=PL_ftyCsXJUO6O7L5j9Ps295a2C3dSfuvj&index=5)
 
 # And then there is this guy
 
