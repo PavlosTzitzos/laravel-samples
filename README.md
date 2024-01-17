@@ -2,14 +2,12 @@
 
 Contains projects that use Laravel . 
 
-There free way is to download php , composer , xampp , vscode .
+There easy way is to download php , composer , xampp , vscode .
 
 # Sources
 1. [How to install Laravel and it's dependacies for the first time](https://www.youtube.com/watch?v=2qgS_MCvDfk)
 
 2. [First project - instagram clone](https://www.youtube.com/watch?v=ImtZ5yENzgE) check comments for the make:auth at 11:47
-
-3. 
 
 # LARAVEL FRAMEWORK
 
