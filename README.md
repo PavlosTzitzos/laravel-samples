@@ -21,6 +21,7 @@ Contains templates that use Laravel .
 10. livewire (template project)
 11. upload-image (template upload image MVC, CRUD)
 12. dynamic-input-form-fields (laravel + livewire, MVC, CRUD)
+13. websockets-app (laravel + )
 
 ## Other Resources
 
