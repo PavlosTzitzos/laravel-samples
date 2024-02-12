@@ -2,6 +2,14 @@
 
 Contains templates that use Laravel . 
 
+## To Do List
+
+- [ ] finish the websockets app
+- [ ] make a VueJS SPA
+- [ ] make a React Client to consume a Laravel API
+- [ ] add in the above Auth with JWT and maybe add 2FA.
+- [ ] make a project with Cart or something that needs payment.
+
 ## Sources
 1. [How to install Laravel and it's dependacies for the first time](https://www.youtube.com/watch?v=2qgS_MCvDfk)
 
