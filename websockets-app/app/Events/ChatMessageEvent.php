@@ -17,12 +17,17 @@ class ChatMessageEvent implements ShouldBroadcast
 
     private string $message;
 
+    private User $user;
+
     /**
      * Create a new event instance.
+     *
+     * @return void
      */
-    public function __construct(string $message)
+    public function __construct(string $message, User $user)
     {
         $this->message = $message;
+        $this->user = $user;
     }
 
     /**
@@ -36,7 +41,8 @@ class ChatMessageEvent implements ShouldBroadcast
             //new PrivateChannel('channel-name'),
             // Parts: channel.class.model.add.more.parts
             //new Channel('public.playground.1'),
-            new Channel('public.chat.1')
+            //new Channel('public.chat.1')
+            new PrivateChannel('private.chat.1')
         ];
     }
 
@@ -58,7 +64,8 @@ class ChatMessageEvent implements ShouldBroadcast
         //     'heya' => 123
         // ];
         return [
-            'message' => $this->message
+            'message' => $this->message,
+            'user' => $this->user->only(['name','email'])
         ];
     }
 }
